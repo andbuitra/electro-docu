@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return 'If not logged in, index should redirect to login page';
-});
+#
+# Rutas relacionadas al módulo de gestión de usuarios
+#
 
-Route::get('/admin', function(){
-    return 'Admin panel. Only accesible for admins. Should redirect to index if logged user is not admin or if user is not logged in';
-});
-
-Route::get('/login', function(){
-    return 'Login panel. Public accessible. Redirected from index and admin if no session is available';
-});
+# Muestra la pantalla principal del panel de gestión documental. Sólo es accesible para usuarios autenticados.
+Route::get('/', 'DashboardController@index');
+Route::get('/admin', 'DashboardController@admin');
+Route::get('/login', 'DashboardController@login');
+Route::get('/agregar-usuario', 'DashboardController@add');
+Route::get('/registro', 'DashboardController@verifyReg');
+Route::get('/registro/{vercode}','DashboardController@register');
