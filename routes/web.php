@@ -11,14 +11,13 @@
 |
 */
 
-#
-# Rutas relacionadas al módulo de gestión de usuarios
-#
 
-# Muestra la pantalla principal del panel de gestión documental. Sólo es accesible para usuarios autenticados.
+# Rutas del dashboard
 Route::get('/', 'DashboardController@index');
 Route::get('/admin', 'DashboardController@admin');
-Route::get('/login', 'DashboardController@login');
 Route::get('/agregar-usuario', 'DashboardController@add');
-Route::get('/registro', 'DashboardController@verifyReg');
-Route::get('/registro/{vercode}','DashboardController@register');
+
+# Rutas de gestión de usuario
+Route::get('/login', 'AuthController@login');
+Route::get('/registro', 'AuthController@verifyReg');
+Route::get('/registro/{vercode}','AuthController@register');

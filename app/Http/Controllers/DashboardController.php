@@ -28,16 +28,6 @@ class DashboardController extends Controller
         return redirect('/');
     }
 
-    # Método que renderiza la pantalla de inicio de sesión a usuarios que no tengan una sesión activa
-    public function login(){
-        
-        if(Auth::check()){
-            return redirect('/');
-        }
-
-        return 'Formulario de inicio de sesión';
-    }
-
     # Método que renderiza el formulario para que un administrador habilite el correo de un usuario para su registro
     public function add(){
         if(Auth::check()){
@@ -47,24 +37,6 @@ class DashboardController extends Controller
         }
     }
 
-    public function verifyReg(){
-        if(Auth::check()){
-            return redirect('/');
-        }
 
-        return 'Formulario para ingresar el código envíado en caso de que el usuario no haya clickeado el link';
-
-    }
-
-    public function register(){
-
-        #$vercode = request()-
-        if(Auth::check()){
-            return redirect('/');
-        }
-
-        return 'Formulario para el registro de datos del nuevo usuario';
-        
-    }
     
 }
