@@ -21,6 +21,7 @@ class CrearTablaUsuarios extends Migration
             $table->string('correo')->unique();
             $table->string('rol')->default('user');
             $table->string('vercode');
+            $table->string('password');
             $table->timestamps();
         });        
     }

@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Usuario;
 
 class AuthController extends Controller
 {
 
     # Método que renderiza la pantalla de inicio de sesión a usuarios que no tengan una sesión activa
-    public function login(){
+    public function showLoginForm(){
         if(Auth::check()){
             return redirect('/');
         }
-    
+        
         return view('login');
 
     }
@@ -39,6 +40,28 @@ class AuthController extends Controller
 
         return view('register');
         
-    }        
+    }      
+    
+    # Método que procesa los datos de inicio de sesión y los envía al modelo
+    public function login(){
+
+        # Stores the request helper on variable
+        $request = request();
+
+        $credentials = [
+            'email' => $request->input('loginEmail'),
+            'password' => $request->input('loginPassword')
+        ];
+
+        if(Usuario::logMe($credentials)){
+            return redirect('/');
+        }
+
+        return redirect()->back()->withInput()->withErrors([
+            'credentials' => 'Email o contraseña incorrectos'
+        ]);
+
+
+    }
 
 }
