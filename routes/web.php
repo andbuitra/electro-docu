@@ -19,5 +19,5 @@ Route::get('/agregar-usuario', 'DashboardController@add');
 
 # Rutas de gestión de usuario
 Route::get('/login', 'AuthController@login');
-Route::get('/registro', 'AuthController@verifyReg');
-Route::get('/registro/{vercode}','AuthController@register');
+Route::get('/registro', 'AuthController@register');
+Route::get('/verify/{vercode}','AuthController@verifyReg');

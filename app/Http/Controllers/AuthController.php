@@ -14,28 +14,30 @@ class AuthController extends Controller
             return redirect('/');
         }
     
-        return 'Formulario de inicio de sesión';
+        return view('login');
 
     }
 
     # Método que renderiza el formulario para que un usuario ingrese el código de verificación
-    public function verifyReg(){
+    public function verifyReg($vercode){
         if(Auth::check()){
             return redirect('/');
         }
 
-        return 'Formulario para ingresar el código envíado en caso de que el usuario no haya clickeado el link';
+        # Verifica en la DB
+        # Placeholder
+        return redirect('/');
 
     }
 
     # Método que renderiza el formulario para que un cliente finalice su proceso de registro
     public function register(){
-        #$vercode = request()-
+        
         if(Auth::check()){
             return redirect('/');
         }
 
-        return 'Formulario para el registro de datos del nuevo usuario';
+        return view('register');
         
     }        
 

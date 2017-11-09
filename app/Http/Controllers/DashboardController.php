@@ -10,9 +10,11 @@ class DashboardController extends Controller
     # Método que renderiza la vista principal para cualquier usuario autenticado en la aplicación
     public function index(){
         if(Auth::check()){
-            return 'Esta es la vista principal del Dashboard';
+            return view('dashboard');
         }
+        
         return redirect('/login');
+        
     }
 
     # Método que renderiza el panel de administración
