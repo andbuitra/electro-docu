@@ -17,7 +17,7 @@ class Usuario extends Authenticatable
     ];
 
     public static function logMe($credentials){
-        return Auth::attempt($credentials);        
+        return Auth::attempt();        
     }
 
 }

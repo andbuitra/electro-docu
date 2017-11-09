@@ -35,7 +35,13 @@
 									<label for="login-password" class="label-material">Contraseña</label>
 								</div>
                 <!-- TODO: Agregar mensaje de error que devuelve la aplicación -->
+                @if ($errors->has('credentials'))
+                <a class="forgot-pass"> {{ $errors->first('credentials')}}</a> 
+                <br>
+                <br>
+                @endif
 								<input type="submit" class="btn btn-primary" value="Iniciar sesión" />
+                
 							</form>
 						</div>
 					</div>
