@@ -40,6 +40,11 @@
                 <br>
                 <br>
                 @endif
+				@if ($errors->has('verification'))
+                <a class="forgot-pass"> {{ $errors->first('verification')}}</a> 
+                <br>
+                <br>
+                @endif
 								<input type="submit" class="btn btn-primary" value="Iniciar sesión" />
                 
 							</form>

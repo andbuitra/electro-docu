@@ -48,6 +48,12 @@ class AuthController extends Controller
         # Stores the request helper on variable
         $request = request();
 
+        if(!Usuario::isVerified($request->input('loginEmail'))){
+            return redirect()->back()->withInput()->withErrors([
+                'verification' => 'El usuario no ha sido verificado. Contacte al administrador del servicio.'
+            ]);
+        }
+
         $credentials = [
             'email' => $request->input('loginEmail'),
             'password' => $request->input('loginPassword')
