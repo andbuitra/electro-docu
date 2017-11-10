@@ -2087,11 +2087,13 @@ pre code {
   padding: 0.75rem;
   vertical-align: top;
   border-top: 1px solid #eceeef;
+  
 }
 
 .table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #eceeef;
+  
 }
 
 .table tbody + tbody {
@@ -2100,6 +2102,7 @@ pre code {
 
 .table .table {
   background-color: #fff;
+  
 }
 
 .table-sm th,
@@ -2127,6 +2130,7 @@ pre code {
 
 .table-hover tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.075);
+  
 }
 
 .table-active,

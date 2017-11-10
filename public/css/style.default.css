@@ -63,6 +63,7 @@ header.page-header {
 table {
   font-size: 0.9em;
   color: #666;
+  
 }
 
 .card-close {
@@ -133,21 +134,26 @@ button, input {
   border: none;
   margin-bottom: 40px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+  
 }
 
 .card-header {
   background: #fff;
   padding: 15px;
+  
   border-bottom: 1px solid #eee;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  
 }
 
 .card-header h1, .card-header h2, .card-header h3, .card-header h4, .card-header h5, .card-header h6 {
   margin-bottom: 0;
+  
 }
 
 .card-body {
   padding: 20px;
+  
 }
 
 .breadcrumb {
@@ -2008,7 +2014,7 @@ STYLE SWITCHER FOR DEMO
   line-height: 1.25;
   border: 1px solid transparent;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 12px;
   border-radius: 0.25rem;
   transition: all 0.2s ease-in-out;
 }
@@ -2575,3 +2581,17 @@ a.text-primary:focus, a.text-primary:hover {
   border-bottom-right-radius: 0.2rem;
   border-top-right-radius: 0.2rem;
 }
+/** Estilos nuevos**/
+
+.paddingBotones{
+	margin-left: 15px;
+	
+}
+.alignTables{
+	text-align: center;
+}
+
+.alignTables th{
+	text-align: center; 
+}
+
