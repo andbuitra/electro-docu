@@ -15,5 +15,6 @@
 
     @include('includes.dashboard.scripts')
     @yield('js')
+    @include('includes.dashboard.footer')
 </body>
 </html>

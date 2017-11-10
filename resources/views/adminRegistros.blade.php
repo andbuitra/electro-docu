@@ -49,9 +49,9 @@
 									<td>
                     @if($usuario->verified == 1)
 										<button type="button" class="btn btn-success disabled">Confirmar</button>
-										<button type="button" class="paddingBotones btn btn-danger" onClick="manageUser({{$user->id}}, 0)">Rechazar</button>
+										<button type="button" class="paddingBotones btn btn-danger" onClick="manageUser({{$usuario->id}}, 0)">Rechazar</button>
                     @else
-                    <button type="button" class="btn btn-success" onClick="manageUser({{$user->id}}, 1)">Confirmar</button>
+                    <button type="button" class="btn btn-success" onClick="manageUser({{$usuario->id}}, 1)">Confirmar</button>
 										<button type="button" class="paddingBotones btn btn-danger disabled">Rechazar</button>
                     @endif
 									</td>
@@ -80,8 +80,7 @@
         'id' : id,
         'verified' : verified
       },
-      success: ok,
-      dataType: json
+      dataType: JSON
     });
   }
 </script>
