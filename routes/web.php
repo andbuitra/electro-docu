@@ -15,7 +15,9 @@
 # Rutas del dashboard
 Route::get('/', 'DashboardController@index');
 Route::get('/adminRegistro', 'DashboardController@showAdminRegistro');
-
+Route::get('/test', function(){
+    return view('dashboard');
+});
 
 # Rutas de gestión de usuario
 Route::get('/login', 'AuthController@showLoginForm');
