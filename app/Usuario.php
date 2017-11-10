@@ -23,7 +23,7 @@ class Usuario extends Authenticatable
     public static function isVerified($email){
          
         $usuario = self::where('email', $email)->get()->first();
-
+        
         if($usuario->verified == 1){
             return true;
         }

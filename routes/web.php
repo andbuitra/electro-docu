@@ -14,7 +14,6 @@
 
 # Rutas del dashboard
 Route::get('/', 'DashboardController@index');
-Route::get('/adminRegistro', 'DashboardController@showAdminRegistro');
 Route::get('/test', function(){
     return view('dashboard');
 });
@@ -29,6 +28,6 @@ Route::get('/logout', 'AuthController@logout');
 
 
 
-# Rutas del dashboard para 
-Route::get('/admin', 'DashboardController@admin');
-Route::get('/agregar-usuario', 'DashboardController@add');
+# Rutas del dashboard para el administrador
+Route::get('/admin/usuarios', 'DashboardController@manageUsers');
+Route::post('/admin/usuarios/ajax-manage', 'DashboardController@activate');

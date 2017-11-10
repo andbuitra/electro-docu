@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Usuario;
 
 class DashboardController extends Controller
 {
@@ -16,18 +17,7 @@ class DashboardController extends Controller
         
         return redirect('/login');
         
-    }
-	# Método que renderiza la vista principal para cualquier usuario autenticado en la aplicación
-    public function showAdminRegistro(){
-		
-        #if(Auth::check()){
-            return view('/adminRegistros');
-        #}
-        
-        return redirect('/adminRegistros');
-        
-    }
-	
+    }	
 
     # Método que renderiza el panel de administración
     public function admin(){
@@ -52,5 +42,27 @@ class DashboardController extends Controller
     }
 
 
-    
+    public function manageUsers(){
+        if(!Auth::check() || Auth::user()->rol != "admin"){
+            return redirect('/');
+        }
+
+        $usuarios = Usuario::all(); 
+
+        return view('adminRegistros')->with(compact('usuarios'));
+
+    }
+
+    public function activate(){
+        $request = request();
+
+        $usuario = Usuario::find($request->input('id'))->get();
+
+        $usuario->verified = $request->input('verified');
+        $usuario->save();
+
+        return 'ok';
+
+    }
+
 }

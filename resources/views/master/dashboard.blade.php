@@ -14,5 +14,6 @@
     </div>
 
     @include('includes.dashboard.scripts')
+    @yield('js')
 </body>
 </html>
