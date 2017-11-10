@@ -14,6 +14,7 @@
 
 # Rutas del dashboard
 Route::get('/', 'DashboardController@index');
+Route::get('/adminRegistro', 'DashboardController@showAdminRegistro');
 
 
 # Rutas de gestión de usuario
@@ -22,6 +23,8 @@ Route::get('/registro', 'AuthController@showRegForm');
 Route::get('/verify/{vercode}','AuthController@verifyReg');
 Route::post('/login', 'AuthController@login');
 Route::post('/registro', 'AuthController@register');
+
+
 
 # Rutas del dashboard para 
 Route::get('/admin', 'DashboardController@admin');

@@ -23,4 +23,10 @@
             <li> <a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
             <li> <a href="login.html"> <i class="icon-interface-windows"></i>Login Page</a></li>
           </ul>
+		  </ul><span class="heading">Admin</span>
+          <ul class="list-unstyled">
+            <li> <a href="/adminRegistro"> <i class="icon-flask"></i>Administrar registros</a></li>
+            
+          </ul>
         </nav>
+		

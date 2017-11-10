@@ -1820,6 +1820,17 @@ section.forms .line {
   font-size: 0.9em;
   color: #c21e0f;
 }
+a.verifyt{
+	font-size: 20px;
+	color: #f2b724;
+	text-align: justify;
+}
+
+h1.forgot-pass{
+	font-size: 17px;
+	color: #f2b724;
+	text-align: justify;
+}
 
 .login-page .form-holder .form small {
   color: #aaa;

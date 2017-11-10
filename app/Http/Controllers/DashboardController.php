@@ -9,13 +9,25 @@ class DashboardController extends Controller
 {
     # Método que renderiza la vista principal para cualquier usuario autenticado en la aplicación
     public function index(){
-        if(Auth::check()){
+		
+        #if(Auth::check()){
             return view('dashboard');
-        }
+        #}
         
         return redirect('/login');
         
     }
+	# Método que renderiza la vista principal para cualquier usuario autenticado en la aplicación
+    public function showAdminRegistro(){
+		
+        #if(Auth::check()){
+            return view('/adminRegistros');
+        #}
+        
+        return redirect('/adminRegistros');
+        
+    }
+	
 
     # Método que renderiza el panel de administración
     public function admin(){

@@ -40,7 +40,8 @@ class AuthController extends Controller
 
         return view('register');
         
-    }      
+    }  
+	
     
     # Método que procesa los datos de inicio de sesión y los envía al modelo
     public function login(){
@@ -72,7 +73,7 @@ class AuthController extends Controller
 
     public function register(){
         $request = request();
-
+		
         $data = [
             'nombres' => $request->input('regNombres'),
             'apellidos' => $request->input('regApellidos'),
@@ -83,9 +84,9 @@ class AuthController extends Controller
         ];
 
         $registro = Usuario::registrar($data);
-
+		
         if($registro){
-            return view('pending-approval');
+            return view('pendingApproval');
         }
 
         return redirect()->back()->withInput()->withErrors([
