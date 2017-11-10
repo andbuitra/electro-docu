@@ -1,7 +1,7 @@
 <nav class="side-navbar">
         <!-- Sidebar Header-->
         <div class="sidebar-header d-flex align-items-center">
-          <div class="avatar">
+          <div class="imageHover avatar">
             <img id="myImg" src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle">
           </div>
           <div class="title">
