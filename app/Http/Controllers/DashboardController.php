@@ -18,6 +18,15 @@ class DashboardController extends Controller
         return redirect('/login');
         
     }	
+	 public function perfil(){
+		
+        #if(Auth::check()){
+            return view('perfil');
+        #}
+        
+        return redirect('/');
+        
+    }
 
     # Método que renderiza el panel de administración
     public function admin(){

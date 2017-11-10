@@ -2,11 +2,17 @@
         <!-- Sidebar Header-->
         <div class="sidebar-header d-flex align-items-center">
           <div class="avatar">
-            <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle">
+            <img id="myImg" src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle">
           </div>
           <div class="title">
             <h1 class="h4"> {{Auth::user()->nombres}} </h1>
-            <p>Web Designer</p>
+            <a class="styleProfile" href="perfil.html">Mostrar perfil</a>
+			<!-- The Modal -->
+				<div id="myModal" class="modal">
+				  <span class="close">×</span>
+				  <img class="modal-content" id="img01">
+				  <div id="caption"></div>
+				</div>
           </div>
         </div>
         <!-- Sidebar Navidation Menus-->

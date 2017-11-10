@@ -17,6 +17,7 @@ Route::get('/', 'DashboardController@index');
 Route::get('/test', function(){
     return view('dashboard');
 });
+Route::get('perfil', 'DashboardController@perfil');
 
 # Rutas de gestión de usuario
 Route::get('/login', 'AuthController@showLoginForm');

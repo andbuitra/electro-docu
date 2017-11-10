@@ -18,6 +18,7 @@ class AuthController extends Controller
         return view('login');
 
     }
+	
 
     # Método que renderiza el formulario para que un usuario ingrese el código de verificación
     public function verifyReg($vercode){
