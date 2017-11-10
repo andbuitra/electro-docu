@@ -25,6 +25,7 @@ Route::get('/registro', 'AuthController@showRegForm');
 Route::get('/verify/{vercode}','AuthController@verifyReg');
 Route::post('/login', 'AuthController@login');
 Route::post('/registro', 'AuthController@register');
+Route::get('/logout', 'AuthController@logout');
 
 
 

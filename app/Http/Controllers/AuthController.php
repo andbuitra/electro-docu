@@ -78,7 +78,7 @@ class AuthController extends Controller
             'nombres' => $request->input('regNombres'),
             'apellidos' => $request->input('regApellidos'),
             'cedula' => $request->input('regCedula'),
-            'correo' => $request->input('regCorreo'),
+            'email' => $request->input('regCorreo'),
             'password' => bcrypt($request->input('regPassword')),
             'vercode' => str_random(12)
         ];
@@ -92,6 +92,16 @@ class AuthController extends Controller
         return redirect()->back()->withInput()->withErrors([
             'data' => 'Los datos ingresados no son válidos. Por favor intente nuevamente.'
         ]);
+
+    }
+
+    public function logout(){
+        if(!Auth::check()){
+            return redirect('/');
+        }
+
+        Auth::logout();
+        return redirect('/');
 
     }
 

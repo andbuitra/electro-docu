@@ -17,11 +17,11 @@
               <!-- Navbar Brand -->
               <a href="index.html" class="navbar-brand">
                 <div class="brand-text brand-big hidden-lg-down">
-                  <span>Bootstrap </span>
-                  <strong>Dashboard</strong>
+                  <span>Electrocucuta </span>
+                  <strong>Ltda</strong>
                 </div>
                 <div class="brand-text brand-small">
-                  <strong>BD</strong>
+                  <strong>EC</strong>
                 </div>
               </a>
               <!-- Toggle Button-->
@@ -44,7 +44,7 @@
                 <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                   class="nav-link">
                   <i class="fa fa-bell-o"></i>
-                  <span class="badge bg-red">12</span>
+                  <span class="badge bg-red">X</span>
                 </a>
                 <ul aria-labelledby="notifications" class="dropdown-menu">
                   <li>
@@ -103,7 +103,7 @@
                 <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                   class="nav-link">
                   <i class="fa fa-envelope-o"></i>
-                  <span class="badge bg-orange">10</span>
+                  <span class="badge bg-orange">D</span>
                 </a>
                 <ul aria-labelledby="notifications" class="dropdown-menu">
                   <li>
@@ -148,7 +148,7 @@
               </li>
               <!-- Logout    -->
               <li class="nav-item">
-                <a href="login.html" class="nav-link logout">Logout
+                <a href="/logout" class="nav-link logout">Cerrar sesión
                   <i class="fa fa-sign-out"></i>
                 </a>
               </li>

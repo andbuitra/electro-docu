@@ -9,7 +9,7 @@ use Auth;
 class Usuario extends Authenticatable
 {
     protected $fillable = [
-        'nombres', 'apellidos', 'cedula', 'correo', 'rol', 'vercode', 'verified'
+        'nombres', 'apellidos', 'cedula', 'email', 'rol', 'vercode', 'verified', 'password', 'remember_token'
     ];
 
     protected $hidden = [
@@ -22,7 +22,7 @@ class Usuario extends Authenticatable
 
     public static function isVerified($email){
          
-        $usuario = self::where('email', $email)->get();
+        $usuario = self::where('email', $email)->get()->first();
 
         if($usuario->verified == 1){
             return true;
