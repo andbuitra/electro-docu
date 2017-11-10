@@ -14,11 +14,15 @@
 
 # Rutas del dashboard
 Route::get('/', 'DashboardController@index');
-Route::get('/admin', 'DashboardController@admin');
-Route::get('/agregar-usuario', 'DashboardController@add');
+
 
 # Rutas de gestión de usuario
 Route::get('/login', 'AuthController@showLoginForm');
-Route::get('/registro', 'AuthController@register');
+Route::get('/registro', 'AuthController@showRegForm');
 Route::get('/verify/{vercode}','AuthController@verifyReg');
 Route::post('/login', 'AuthController@login');
+Route::post('/registro', 'AuthController@register');
+
+# Rutas del dashboard para 
+Route::get('/admin', 'DashboardController@admin');
+Route::get('/agregar-usuario', 'DashboardController@add');

@@ -32,4 +32,13 @@ class Usuario extends Authenticatable
         return false;
     }
 
+    # Returns true if user was successfully registered
+    public static function registrar($credentials){
+        $usuario = self::create($credentials);
+        if(!$usuario->id){
+            return false;
+        }
+        return true;
+    }
+
 }

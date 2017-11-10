@@ -32,7 +32,7 @@ class AuthController extends Controller
     }
 
     # Método que renderiza el formulario para que un cliente finalice su proceso de registro
-    public function register(){
+    public function showRegForm(){
         
         if(Auth::check()){
             return redirect('/');
@@ -67,6 +67,30 @@ class AuthController extends Controller
             'credentials' => 'Email o contraseña incorrectos'
         ]);
 
+
+    }
+
+    public function register(){
+        $request = request();
+
+        $data = [
+            'nombres' => $request->input('regNombres'),
+            'apellidos' => $request->input('regApellidos'),
+            'cedula' => $request->input('regCedula'),
+            'correo' => $request->input('regCorreo'),
+            'password' => bcrypt($request->input('regPassword')),
+            'vercode' => str_random(12)
+        ];
+
+        $registro = Usuario::registrar($data);
+
+        if($registro){
+            return view('pending-approval');
+        }
+
+        return redirect()->back()->withInput()->withErrors([
+            'data' => 'Los datos ingresados no son válidos. Por favor intente nuevamente.'
+        ]);
 
     }
 
