@@ -20,9 +20,10 @@ class DashboardController extends Controller
     }	
 	 public function perfil(){
 		
-        #if(Auth::check()){
-            return view('perfil');
-        #}
+        if(Auth::check()){
+            $user = Auth::user();
+            return view('perfil')->with(compact('user'));
+        }
         
         return redirect('/');
         
@@ -63,14 +64,16 @@ class DashboardController extends Controller
     }
 
     public function activate(){
-        $request = request();
+        $user_id = request()->input('id');
+        $verified = request()->input('verified');
+        $usuario = Usuario::where('id', $user_id)->get()->first();
 
-        $usuario = Usuario::find($request->input('id'))->get();
-
-        $usuario->verified = $request->input('verified');
-        $usuario->save();
-
-        return 'ok';
+        $usuario->verified = $verified;
+        if($usuario->save()){
+            return "true";
+        }
+        
+        return "false";
 
     }
 

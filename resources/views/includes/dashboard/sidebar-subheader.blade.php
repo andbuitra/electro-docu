@@ -6,7 +6,7 @@
           </div>
           <div class="title">
             <h1 class="h4"> {{Auth::user()->nombres}} </h1>
-            <a class="styleProfile" href="perfil.html">Mostrar perfil</a>
+            <a class="styleProfile" href="/perfil">Mostrar perfil</a>
 			<!-- The Modal -->
 				<div id="myModal" class="modal">
 				  <span class="close">×</span>

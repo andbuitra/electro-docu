@@ -1,12 +1,8 @@
-@extends('master.dashboard') 
-
-@section('title')
+@extends('master.dashboard') @section('title')
 
 <title>Administrar registros</title>
 
-@endsection 
-
-@section('content')
+@endsection @section('content')
 
 <section class="tables">
 	<div class="container-fluid">
@@ -41,23 +37,23 @@
 								</tr>
 							</thead>
 							<tbody>
-                @foreach ($usuarios as $usuario)
+								@foreach ($usuarios as $usuario)
 								<tr>
 									<th scope="row">{{ $usuario->id }}</th>
 									<td>{{ $usuario->nombres }}</td>
 									<td>{{ $usuario->email }}</td>
 									<td>
-                    @if($usuario->verified == 1)
+										@if($usuario->verified == 1)
 										<button type="button" class="btn btn-success disabled">Confirmar</button>
 										<button type="button" class="paddingBotones btn btn-danger" onClick="manageUser({{$usuario->id}}, 0)">Rechazar</button>
-                    @else
-                    <button type="button" class="btn btn-success" onClick="manageUser({{$usuario->id}}, 1)">Confirmar</button>
+										@else
+										<button type="button" class="btn btn-success" onClick="manageUser({{$usuario->id}}, 1)">Confirmar</button>
 										<button type="button" class="paddingBotones btn btn-danger disabled">Rechazar</button>
-                    @endif
+										@endif
 									</td>
 
 								</tr>
-                @endforeach
+								@endforeach
 							</tbody>
 						</table>
 					</div>
@@ -68,20 +64,26 @@
 	</div>
 </section>
 
-@endsection
-
-@section('js')
+@endsection @section('js')
 <script>
-  function manageUser(id, verified){
+	function manageUser(id, verified){
     $.ajax({
       type: "POST",
       url: "/admin/usuarios/ajax-manage",
       data: {
-        'id' : id,
-        'verified' : verified
+				"_token": "{{csrf_token()}}",
+        "id": id,
+        "verified": verified
       },
+			success: function(data){
+				if(data.success == true){
+					window.location.replace('/admin/usuarios');
+				}
+				
+			},
       dataType: JSON
     });
   }
+
 </script>
 @endsection

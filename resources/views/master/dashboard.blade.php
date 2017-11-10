@@ -10,11 +10,12 @@
         <div class="page-content d-flex align-items-stretch">
             @include('includes.dashboard.sidebar-subheader')
             @yield('content')
+            @include('includes.dashboard.footer')
         </div>
     </div>
 
     @include('includes.dashboard.scripts')
     @yield('js')
-    @include('includes.dashboard.footer')
+    
 </body>
 </html>
