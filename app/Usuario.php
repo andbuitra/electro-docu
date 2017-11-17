@@ -20,6 +20,14 @@ class Usuario extends Authenticatable
         return Auth::attempt($credentials);      
     }
 
+    public static function isRegistered($email){
+        $usuario = self::where('email', $email)->get()->first();
+        if(is_null($usuario)){
+            return false;
+        }
+        return true;
+    }
+
     public static function isVerified($email){
          
         $usuario = self::where('email', $email)->get()->first();

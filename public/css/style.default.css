@@ -2693,3 +2693,11 @@ p.styleProfile:hover{
 	margin-left:30px;
 }
 
+.userImg img{
+  width: 100px;
+}
+
+.forAlign{
+ text-align: center;
+}
+

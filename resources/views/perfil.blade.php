@@ -8,8 +8,8 @@
 	<div class="card">
 
 		<div class="card-header d-flex align-items-center">
-			<div class="avatar">
-				<img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle">
+			<div class="userImg avatar">
+				<img src="img/user.png" alt="..." class="img-fluid rounded-circle">
 			</div>
 			<div class="align-profile-title title">
 				<h1 class="h4">{{ $user->nombres }} {{ $user->apellidos }}</h1>
@@ -17,7 +17,7 @@
 			</div>
 		</div>
 		<div class="card-body">
-			<table class="table">
+			<table class="forAlign table">
 
 				<tbody>
 					<tr>

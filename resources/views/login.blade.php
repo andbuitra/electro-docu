@@ -1,10 +1,6 @@
-@extends('master.reg') 
-
-@section('title')
+@extends('master.reg') @section('title')
 <title>Inicio de sesión</title>
-@endsection 
-
-@section('content')
+@endsection @section('content')
 <div class="page login-page">
 	<div class="container d-flex align-items-center">
 		<div class="form-holder has-shadow">
@@ -25,7 +21,7 @@
 					<div class="form d-flex align-items-center">
 						<div class="content">
 							<form id="login-form" method="post" action="/login">
-                {{ csrf_field() }}
+								{{ csrf_field() }}
 								<div class="form-group">
 									<input id="login-email" type="email" name="loginEmail" required="" class="input-material" value="{{old('loginEmail')}}">
 									<label for="login-email" class="label-material">Correo electrónico</label>
@@ -34,19 +30,24 @@
 									<input id="login-password" type="password" name="loginPassword" required="" class="input-material">
 									<label for="login-password" class="label-material">Contraseña</label>
 								</div>
-                <!-- TODO: Agregar mensaje de error que devuelve la aplicación -->
-                @if ($errors->has('credentials'))
-                <a class="forgot-pass"> {{ $errors->first('credentials')}}</a> 
-                <br>
-                <br>
-                @endif
-				@if ($errors->has('verification'))
-                <a class="forgot-pass"> {{ $errors->first('verification')}}</a> 
-                <br>
-                <br>
-                @endif
+								<!-- TODO: Agregar mensaje de error que devuelve la aplicación -->
+								@if ($errors->has('credentials'))
+								<a class="forgot-pass"> {{ $errors->first('credentials')}}</a>
+								<br>
+								<br> 
+								@endif 
+								@if ($errors->has('verification'))
+								<a class="forgot-pass"> {{ $errors->first('verification')}}</a>
+								<br>
+								<br> 
+								@endif
+								@if ($errors->has('exists'))
+								<a class="forgot-pass"> {{ $errors->first('exists')}}</a>
+								<br>
+								<br> 
+								@endif
 								<input type="submit" class="btn btn-primary" value="Iniciar sesión" />
-                
+
 							</form>
 						</div>
 					</div>

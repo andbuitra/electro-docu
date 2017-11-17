@@ -77,4 +77,9 @@ class DashboardController extends Controller
 
     }
 
+    public function adminRoot(){
+        # Lol you shouldn't be here ecks dee
+        return redirect('/');
+    }
+
 }

@@ -49,16 +49,24 @@ class AuthController extends Controller
 
         # Stores the request helper on variable
         $request = request();
+        $email = $request->input('loginEmail');
+        $pwd = $request->input('loginPassword');
+    
+        if(!Usuario::isRegistered($email)){
+            return redirect()->back()->withInput()->withErrrors([
+                'exists' => 'El usuario no existe. Por favor cree una cuenta.'
+            ]);
+        }
 
-        if(!Usuario::isVerified($request->input('loginEmail'))){
+        if(!Usuario::isVerified($email)){
             return redirect()->back()->withInput()->withErrors([
                 'verification' => 'El usuario no ha sido verificado. Contacte al administrador del servicio.'
             ]);
         }
 
         $credentials = [
-            'email' => $request->input('loginEmail'),
-            'password' => $request->input('loginPassword')
+            'email' => $email,
+            'password' => $pwd
         ];
 
         if(Usuario::logMe($credentials)){

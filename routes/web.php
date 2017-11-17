@@ -24,8 +24,7 @@ Route::post('/login', 'AuthController@login');
 Route::post('/registro', 'AuthController@register');
 Route::get('/logout', 'AuthController@logout');
 
-
-
 # Rutas del dashboard para el administrador
 Route::get('/admin/usuarios', 'DashboardController@manageUsers');
 Route::post('/admin/usuarios/ajax-manage', 'DashboardController@activate');
+Route::get('/admin', 'DashboardController@adminRoot');
