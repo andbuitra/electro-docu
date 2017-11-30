@@ -2,12 +2,17 @@
 
 namespace App;
 
+# Importing models
+use App\Documento;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Auth;
 
 class Usuario extends Authenticatable
 {
+
+    # Model's properties
     protected $fillable = [
         'nombres', 'apellidos', 'cedula', 'email', 'rol', 'vercode', 'verified', 'password', 'remember_token'
     ];
@@ -16,6 +21,14 @@ class Usuario extends Authenticatable
         'password'
     ];
 
+    # Model's associations
+    public function documents(){
+        $this->hasMany('Document');
+    }
+
+
+
+    # Model methods
     public static function logMe($credentials){
         return Auth::attempt($credentials);      
     }
