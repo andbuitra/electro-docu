@@ -14,8 +14,8 @@ class CrearTablaUsuarios extends Migration
     public function up()
     {
         Schema::create('usuarios', function(Blueprint $table){
-            $table->increments('id');
             $table->string('nombres');
+            $table->increments('id');
             $table->string('apellidos');
             $table->string('cedula');
             $table->string('email')->unique();
@@ -25,7 +25,8 @@ class CrearTablaUsuarios extends Migration
             $table->string('password');
             $table->string('remember_token')->nullable();
             $table->timestamps();
-        });        
+        });
+
     }
 
     /**
