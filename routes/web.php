@@ -16,6 +16,7 @@
 Route::get('/', 'DashboardController@index');
 Route::get('perfil', 'DashboardController@perfil');
 
+
 # Rutas de gestión de usuario
 Route::get('/login', 'AuthController@showLoginForm');
 Route::get('/registro', 'AuthController@showRegForm');
@@ -28,3 +29,4 @@ Route::get('/logout', 'AuthController@logout');
 Route::get('/admin/usuarios', 'DashboardController@manageUsers');
 Route::post('/admin/usuarios/ajax-manage', 'DashboardController@activate');
 Route::get('/admin', 'DashboardController@adminRoot');
+Route::get('adminPermiso', 'DashboardController@permisos');

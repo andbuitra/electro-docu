@@ -17,7 +17,8 @@ class DashboardController extends Controller
         
         return redirect('/login');
         
-    }	
+    }
+
 	 public function perfil(){
 		
         if(Auth::check()){
@@ -81,5 +82,16 @@ class DashboardController extends Controller
         # Lol you shouldn't be here ecks dee
         return redirect('/');
     }
+
+    #Metodo para ver los permisos (Bae luego lo acomodara)
+    public function permisos(){
+        
+        if(Auth::check()){
+            return view('adminPermiso');
+        }
+        
+        return redirect('/login');
+        
+    }   
 
 }

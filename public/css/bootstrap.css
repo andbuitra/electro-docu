@@ -2080,13 +2080,15 @@ pre code {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
+  border-color: 1px #000;
 }
 
 .table th,
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #eceeef;
+  border: 1px solid #eceeef;
+
   
 }
 
@@ -2098,10 +2100,13 @@ pre code {
 
 .table tbody + tbody {
   border-top: 2px solid #eceeef;
+  border-bottom: 2px solid #eceeef;
+  border-right: 2px solid #eceeef;
 }
 
 .table .table {
   background-color: #fff;
+
   
 }
 
