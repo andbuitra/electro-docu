@@ -108,5 +108,13 @@ class DashboardController extends Controller
         return view('inbox');
 
     }
+    public function detalles(){
+        if(!Auth::check()){
+            redirect('/');
+        }
+
+        return view('detalles');
+
+    }
 
 }
