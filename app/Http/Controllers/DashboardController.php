@@ -84,14 +84,20 @@ class DashboardController extends Controller
     }
 
     #Metodo para ver los permisos (Bae luego lo acomodara)
+    # Bae ya lo acomodó ;)
     public function privileges(){
-        
-        if(Auth::check()){
-            return view('adminPermiso');
+
+        if(!Auth::check() || Auth::user()->rol != "admin"){
+            return redirect('/');
         }
+
+        $usuarios = Usuario::all();        
+        return view('adminPermiso')->with(compact('usuarios'));
         
-        return redirect('/login');
-        
-    }   
+    }
+
+    public function users(){
+        return redirect('/admin/usuarios/control');
+    }
 
 }
