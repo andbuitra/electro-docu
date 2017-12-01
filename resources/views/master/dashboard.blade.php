@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-App="demoapp">
 <head>
     @include('includes.dashboard.head')
     <title>Electro Cucuta Ltda</title>
