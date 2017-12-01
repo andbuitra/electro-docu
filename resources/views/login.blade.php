@@ -48,7 +48,7 @@
 								@endif
 								<input type="submit" class="btn btn-primary" value="Iniciar sesión" />
 
-							</form>
+							</form><div class="downB"><small>Si no tienes una cuenta </small><a href="/registro" class="signup">Registrate</a></div>
 						</div>
 					</div>
 				</div>

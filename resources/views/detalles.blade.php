@@ -48,13 +48,20 @@
                             <input type="section" class="form-control" value="Random words,Random words,Random words,Random words" readonly="true">
                           </div>
                         </div>
+                        <div class="line"></div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Archivo</label>
+                          <div class="col-sm-9">
+                            <a href="https://www.google.com.co/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiwmYzRh-nXAhXMQt8KHVIaCJsQFggmMAA&url=http%3A%2F%2Fceder.ulagos.cl%2Flider%2Fimages%2Fnumeros%2F23%2F1.-LIDER%252023_Juarez_pp9_28.pdf&usg=AOvVaw3h3WYpJpmDgMGLQ7yFUyyV">prueba.pdf</a>
+                          </div>
+                        </div>
                        
                         
                         <div class="line"></div>
                         <div class="form-group row">
                           <div class="col-sm-4 offset-sm-3">
-                            <button type="submit" class="btn btn-secondary">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            
+                            <button type="submit" class="btn btn-primary">Descargar</button>
                           </div>
                         </div>
                       </form>
