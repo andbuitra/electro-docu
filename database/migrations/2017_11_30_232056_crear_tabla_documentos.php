@@ -18,7 +18,12 @@ class CrearTablaDocumentos extends Migration
             $table->string('titulo');
             $table->string('notas');
             $table->string('path');
+            $table->integer('usuario_id')->unsigned()->index();
             $table->timestamps();
+        });
+
+        Schema::table('documentos', function (Blueprint $table){
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
         });
     }
 

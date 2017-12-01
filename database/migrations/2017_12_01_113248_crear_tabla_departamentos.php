@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmpleadosTable extends Migration
+class CrearTablaDepartamentos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateEmpleadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('empleados', function (Blueprint $table) {
+        Schema::create('departamentos', function(Blueprint $table){
             $table->increments('id');
-            $table->string('cedula')->unique();
-            $table->integer('usuario_id')->unsigned()->index()->nullable();
-            $table->string('nombre');
-            $table->string('apellido');            
-            $table->timestamps();
+            $table->string('name');
+        });
+
+        Schema::table('usuarios', function(Blueprint $table){
+            $table->integer('departamento_id')->unsigned()->index();
+            $table->foreign('departamento_id')->references('id')->on('departamentos');
         });
     }
 
@@ -30,6 +31,6 @@ class CreateEmpleadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleados');
+        //
     }
 }

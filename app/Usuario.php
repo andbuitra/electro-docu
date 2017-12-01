@@ -6,6 +6,7 @@ namespace App;
 use App\Documento;
 use App\Permiso;
 use App\Empleado;
+use App\Departamento;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -34,6 +35,10 @@ class Usuario extends Authenticatable
 
     public function empleado(){
         return $this->belongsTo('Empleado');
+    }
+
+    public function departamento(){
+        return $this->belongsTo('Departamento');
     }
 
     # Model methods
@@ -70,6 +75,9 @@ class Usuario extends Authenticatable
         if(!$usuario->id){
             return false;
         }
+        $employee = Empleado::where('cedula', $credentials['cedula'])->get()->first();
+        $employee->usuario_id = $usuario->id;
+        $employee->save();
         return true;
     }
 

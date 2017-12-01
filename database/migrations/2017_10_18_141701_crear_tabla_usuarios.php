@@ -28,6 +28,11 @@ class CrearTablaUsuarios extends Migration
             $table->timestamps();           
         });
 
+        # Crea la relación al crear la tabla de usuario para que no haya error
+        Schema::table('empleados', function (Blueprint $table){
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
+        });
+
     }
 
     /**
