@@ -19,13 +19,13 @@ class CrearTablaUsuarios extends Migration
             $table->string('apellidos');
             $table->string('cedula')->unique();
             $table->string('email')->unique();
-            $table->string('rol')->default('user');            
+            $table->string('rol')->default('user');
             $table->string('vercode');
             $table->string('verified')->default('0');
             $table->string('password');
             $table->string('remember_token')->nullable();
-            $table->string('departamento')->nullable();                        
-            $table->timestamps();           
+            $table->string('departamento')->nullable();
+            $table->timestamps();
         });
 
         # Crea la relación al crear la tabla de usuario para que no haya error
