@@ -11,7 +11,7 @@ class Documento extends Model
         'titulo', 'notas', 'path'
     ];
 
-    public function users(){
+    public function usuarios(){
         $this->belongsToMany('Usuario');
     }
 }

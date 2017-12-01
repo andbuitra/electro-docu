@@ -11,7 +11,7 @@ class Departamento extends Model
         'nombre'
     ];
 
-    public function users(){
+    public function usuarios(){
         $this->hasMany('Usuario');
     }
 

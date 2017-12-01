@@ -23,11 +23,11 @@ class Usuario extends Authenticatable
     ];
 
     # Model's associations
-    public function documents(){
+    public function documentos(){
         $this->hasMany('Documento');
     }
 
-    public function department(){
+    public function departmento(){
         $this->has('Departmento');
     }
 
