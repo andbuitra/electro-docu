@@ -24,12 +24,10 @@ class CrearTablaUsuarios extends Migration
             $table->string('verified')->default('0');
             $table->string('password');
             $table->string('remember_token')->nullable();
-<<<<<<< HEAD
-            $table->string('departamento')->nullable();
+
+            $table->string('departamento') ->nullable();
             $table->timestamps();
-=======
-            $table->timestamps();           
->>>>>>> origin/master
+
         });
 
         # Crea la relación al crear la tabla de usuario para que no haya error

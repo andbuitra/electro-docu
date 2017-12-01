@@ -65,7 +65,7 @@ class DashboardController extends Controller
         $departamentos = Departamento::all();
         $permisos = Permiso::all();
 
-        return view('adminRegistros')->with(compact('usuarios'), compact('permisos'));
+        return view('adminRegistros')->with(compact('usuarios','departamentos'));
 
     }
 

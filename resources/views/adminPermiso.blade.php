@@ -16,7 +16,7 @@
 					<div style="overflow-x:auto;" class="card-body">
 						<table class="tablaPermisos table table-striped table-hover">
 							<thead>
-<<<<<<< HEAD
+
 							    <tr>
 							      <th rowspan="2" colspan="2" >Empleado</th>
 							      <th colspan="5">Permisos</th>
@@ -24,7 +24,7 @@
 							    <tr>
 							      <th colspan="2">Enviar</th>
 							      <th colspan="3">Editar</th>
-							      
+
 							    </tr>
 							    <tr>
 							      <th>Nombre</th>
@@ -35,7 +35,7 @@
 							      <th>Nivel 2</th>
 							      <th>Nivel 3</th>
 							    </tr>
-=======
+
 								<tr>
 									<th rowspan="2" colspan="2" width="400px">Empleado</th>
 									<th colspan="5">Permisos</th>
@@ -55,17 +55,17 @@
 									<th>Nivel 3</th>
 								</tr>
 
->>>>>>> 6099fbdbfd969cee073d39cb255919b20afd49cc
+
 
 							</thead>
 							<tbody>
 								@foreach ($usuarios as $usuario)
 								<tr class="article-loop">
 
-<<<<<<< HEAD
+
 							  </thead>
 							  <tbody>
-							  	
+
 							    <tr >
 
 							      <td>brenda</td>
@@ -95,12 +95,12 @@
     								<label for="styled-checkbox-7"></label></td>
 							      <td><input class="styled-checkbox" id="styled-checkbox-8" type="checkbox" value="value8">
     								<label for="styled-checkbox-8"></label></td>
-							      
+
 							    </tr>
 
-							 
+
 							  </tbody>
-=======
+
 									<td>{{ $usuario->nombres }}</td>
 									<td>{{ $usuario->cedula }}</td>
 									<td>
@@ -136,7 +136,7 @@
 								</tr>
 								@endforeach
 							</tbody>
->>>>>>> 6099fbdbfd969cee073d39cb255919b20afd49cc
+
 						</table>
 						<div class="alignButtons">
 							<button type="button" class="btn btn-success">Guardar</button>
@@ -166,7 +166,7 @@
 				if(data.success == true){
 					window.location.replace('/admin/usuarios');
 				}
-				
+
 			},
       dataType: JSON
     });

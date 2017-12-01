@@ -10,7 +10,7 @@
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header ">
-						<h3>Inbox</h3>
+						<h3>Outbox</h3>
 					</div>
 					<div class="inboxWrapper">
 						<div class="inboxHeader">
@@ -33,7 +33,7 @@
 								<tr>
 
 									<th class="titulo">Titulo</th>
-									<th class="remitente">Remitente</th>
+									<th class="remitente">Receptor</th>
 									<th class="fecha">Fecha</th>
 									<th></th>
 								</tr>
