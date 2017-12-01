@@ -217,9 +217,19 @@
                         </div>
                         <div class="line"></div>
                         <div class="form-group row">
-                          <label class="col-sm-3 form-control-label">Notas</label>
+                          <label class="col-sm-3 form-control-label">Archivo:</label>
                           <div class="col-sm-9">
-                            <input type="file" class="form-control" >
+                            <div class="form-group">
+								<div class="input-group input-file" name="Fichier1">
+									<span class="input-group-btn">
+						        		<button class="btn btn-default btn-choose" type="button">Choose</button>
+						    		</span>
+						    		<input type="text" class="form-control" placeholder='Choose a file...' />
+						    		<span class="input-group-btn">
+						       			 <button class="btn btn-warning btn-reset" type="button">Reset</button>
+						    		</span>
+								</div>
+							</div>
                           </div>
                         </div>
                        
