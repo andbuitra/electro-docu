@@ -15,7 +15,7 @@ class DashboardController extends Controller
             return view('dashboard');
         }
         
-        return redirect('/login');
+        return redirect('/login');        
         
     }
 

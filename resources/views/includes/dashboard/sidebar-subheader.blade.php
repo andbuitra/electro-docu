@@ -36,7 +36,7 @@
           </li>          
         </ul>
         @if(Auth::user()->rol == "admin")
-          <span class="heading">Administrador</span>
+          <span class="heading">Admin</span>
           <ul class="list-unstyled">
             <li>
               <a href="/admin/usuarios/verificacion">
@@ -48,7 +48,7 @@
             </li>            
             <li>
               <a href="/admin/usuarios">
-                <i class="fa fa-gear"></i>Configuración</a>
+                <i class="fa fa-gear"></i>Ajustes</a>
             </li>
             <li>
               <a href="/admin/usuarios">

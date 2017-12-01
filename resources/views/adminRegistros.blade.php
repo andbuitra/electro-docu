@@ -33,7 +33,6 @@
 									<th>Nombre</th>
 									<th>Correo</th>
 									<th>Acción</th>
-
 								</tr>
 							</thead>
 							<tbody>
@@ -51,7 +50,6 @@
 										<button type="button" class="paddingBotones btn btn-danger disabled">Rechazar</button>
 										@endif
 									</td>
-
 								</tr>
 								@endforeach
 							</tbody>
@@ -59,31 +57,27 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </section>
 
 @endsection @section('js')
 <script>
-	function manageUser(id, verified){
-    $.ajax({
-      type: "POST",
-      url: "/admin/usuarios/ajax-manage",
-      data: {
+	function manageUser(id, verified) {
+		$.ajax({
+			type: "POST",
+			url: "/admin/usuarios/ajax-manage",
+			data: {
 				"_token": "{{csrf_token()}}",
-        "id": id,
-        "verified": verified
-      },
-			success: function(data){
-				if(data.success == true){
-					window.location.replace('/admin/usuarios');
-				}
-				
+				"id": id,
+				"verified": verified
 			},
-      dataType: JSON
-    });
-  }
+			success: function (data) {
+				window.location.reload()
 
+			},
+			dataType: JSON
+		});
+	}
 </script>
 @endsection
