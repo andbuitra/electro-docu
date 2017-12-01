@@ -43,17 +43,16 @@
 									<td>{{ $usuario->nombres }}</td>
 									<td>{{ $usuario->email }}</td>
 									<td>
-									  <div class="form-group row">
-                         
-				                          <div class="col-sm-9 select">
-				                            <select name="account" class="form-control">
-				                              <option>Ventas</option>
-				                              <option>Contabilidad</option>
-				                              <option>Sistemas</option>
-				                              <option>Sub-Gerencia</option>
-				                            </select>
-				                          </div>
-				                      </div>
+										<div class="form-group row">
+
+											<div class="col-sm-9 select">
+												<select name="account" class="form-control">
+													@foreach ($permisos as $permiso)
+													<option>{{ $permiso->name }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
 
 									</td>
 									<td>
@@ -94,5 +93,6 @@
 			dataType: JSON
 		});
 	}
+
 </script>
 @endsection
