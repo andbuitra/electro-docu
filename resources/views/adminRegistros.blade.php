@@ -47,10 +47,9 @@
                          
 				                          <div class="col-sm-9 select">
 				                            <select name="account" class="form-control">
-				                              <option>Ventas</option>
-				                              <option>Contabilidad</option>
-				                              <option>Sistemas</option>
-				                              <option>Sub-Gerencia</option>
+				                              @foreach ($departamentos as $departamento)
+											  <option>{{$departamento->name}}</option>				                              
+											  @endforeach
 				                            </select>
 				                          </div>
 				                      </div>
