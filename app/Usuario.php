@@ -7,6 +7,7 @@ use App\Documento;
 use App\Permiso;
 use App\Empleado;
 use App\Departamento;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -25,7 +26,7 @@ class Usuario extends Authenticatable
     ];
 
     # Model's associations
-    public function documentos(){
+    public function enviados(){
         return $this->hasMany('Documento');
     }
 
@@ -88,6 +89,14 @@ class Usuario extends Authenticatable
             return true;
         }
         return false;
+    }
+
+
+    public function recibidos($usuario_id){
+        return DB::table('usuarios')
+        ->join('documentos', 'usuarios.usuario_id', '=', 'documentos.receptor')
+        ->select('documentos.id', 'documentos.titulo', 'documentos.path', 'documentos.created_at')
+        ->where('documentos.receptor', '=', $usuario_id);
     }
 
 }

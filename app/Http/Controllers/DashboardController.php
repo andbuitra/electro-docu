@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Usuario;
+use App\Departamento;
+use App\Permiso;
+
 
 class DashboardController extends Controller
 {
@@ -59,8 +62,10 @@ class DashboardController extends Controller
         }
 
         $usuarios = Usuario::all(); 
+        $departamentos = Departamento::all();
+        $permisos = Permiso::all();
 
-        return view('adminRegistros')->with(compact('usuarios'));
+        return view('adminRegistros')->with(compact('usuarios'), compact('permisos'));
 
     }
 
@@ -92,6 +97,7 @@ class DashboardController extends Controller
         }
 
         $usuarios = Usuario::all();        
+        $permisos = Permiso::all();
         return view('adminPermiso')->with(compact('usuarios'));
         
     }
@@ -105,13 +111,26 @@ class DashboardController extends Controller
             redirect('/');
         }
 
-        return view('inbox');
+        $msgs = Auth::user()->recibidos(Auth::user()->id);
+
+        return view('inbox')->with(compact('msgs'));
 
     }
+
+    public function outbox(){
+        if(!Auth::check()){
+            redirect('/');
+        }
+
+        $msgs = Auth::user()->enviados();
+        return view('outbox')->with(compact('msgs'));
+    }
+
     public function detalles(){
         if(!Auth::check()){
             redirect('/');
         }
+
 
         return view('detalles');
 

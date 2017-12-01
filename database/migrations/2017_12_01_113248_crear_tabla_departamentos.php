@@ -19,7 +19,7 @@ class CrearTablaDepartamentos extends Migration
         });
 
         Schema::table('usuarios', function(Blueprint $table){
-            $table->integer('departamento_id')->unsigned()->index();
+            $table->integer('departamento_id')->unsigned()->index()->default('1');
             $table->foreign('departamento_id')->references('id')->on('departamentos');
         });
     }

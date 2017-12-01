@@ -130,9 +130,13 @@
 				
 				<!-- Numbers-->
 				<div class="statistic d-flex align-items-center bg-white has-shadow">
-					<div id="myBtn" class="modalN icon bg-green">
-						<i class="fa fa-plus"></i>
+					<div class="fancy-btn open modalN icon bg-green">
+						<i class=" fa fa-plus"></i>
+
 					</div>
+					
+		
+					
 					<div class="text">
 						<strong>Redactar</strong>
 						<br>
@@ -141,16 +145,6 @@
 				</div>
 				
 
-				<!-- The Modal -->
-				<div id="myModal" class="modal">
-
-				  <!-- Modal content -->
-				  <div class="modal-content">
-				    <span class="close">&times;</span>
-				    <p>Some text in the Modal..</p>
-				  </div>
-
-				</div>
 				<div class="bar-chart has-shadow bg-white">
 					<div class="title">
 						<strong class="text-violet">99.9%</strong>
@@ -160,8 +154,95 @@
 					<canvas id="barChartHome"></canvas>
 				</div>
 			</div>
+					<div class="modal-frame">
+					  	<div class="modalI">
+						   	<div class="modal-inset">
+					    		<div class="button close"><i class="fa fa-close"></i></div>
+						
+					      		<div class="modal-body">
+					      			<form class="form-horizontal">
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Titulo</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" >
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="line"></div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Notas</label>
+                          <div class="col-sm-9">
+                            <input type="section" class="form-control" >
+                          </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Receptor:</label>
+                          <div class="col-sm-9">
+                          	<fieldset class="multiple-select-widget" tabindex="0">								
+								<div>
+									<label>
+										<input type="checkbox" name="Kirk" checked=""/>
+										<span>James T. Kirk</span>
+									</label>
+									<label>
+										<input type="checkbox" name="Spock" checked=""/>
+										<span>Spock</span>
+									</label>
+									<label>
+										<input type="checkbox" name="McCoy"/>
+										<span>Leonard “Bones” McCoy</span>
+									</label>
+									<label>
+										<input type="checkbox" name="Scott"/>
+										<span>Montgomery “Scotty” Scott</span>
+									</label>
+									<label>
+										<input type="checkbox" name="Sulu"/>
+										<span>Hikaru Sulu</span>
+									</label>
+									<label>
+										<input type="checkbox" name="Uhura"/>
+										<span>Nyota Uhura</span>
+									</label>
+									<label>
+										<input type="checkbox" name="Chekov"/>
+										<span>Pavel Chekov</span>
+									</label>
+								</div>
+							</fieldset>
+                            
+                          </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Notas</label>
+                          <div class="col-sm-9">
+                            <input type="file" class="form-control" >
+                          </div>
+                        </div>
+                       
+                        
+                        <div class="line"></div>
+                        <div class="formPadding form-group row">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" onclick="" class="buttonPadding btn btn-secondary">Cancelar</button>
+                          
+                        </div>
+
+
+
+                      </form>
+									        
+					      		</div>
+					    	</div>
+					  	</div>
+					</div>
+					<div class="modal-overlay"></div>
 		</div>
 	</div>
 </section>
+
 
 @endsection

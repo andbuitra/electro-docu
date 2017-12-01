@@ -18,7 +18,10 @@ class CrearTablaDocumentos extends Migration
             $table->string('titulo');
             $table->string('notas');
             $table->string('path');
+            # Usario remitente
             $table->integer('usuario_id')->unsigned()->index();
+            # ID del Usuario receptor
+            $table->integer('receptor')->unsigned()->index();
             $table->timestamps();
         });
 
