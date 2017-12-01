@@ -7,6 +7,7 @@
     <script src="{{ asset('js/charts-home.js') }}"></script>
     <script src="{{ asset('js/front.js') }}"></script>
 	<script src="{{ asset('js/modal.js')}} "></script>
+  <script src="{{ asset('js/pagination.js')}} "></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
     <!---->
     <script>

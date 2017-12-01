@@ -2706,8 +2706,15 @@ p.styleProfile:hover{
 }
 .tablaPermisos table{
   border: 1px #000;
+  vertical-align: center;
+
+
 }
-.tablaPermisos td, th {border: solid 2px #eceeef}
+.tablaPermisos td, th {
+  border: solid 2px #eceeef
+
+}
+
 
 .styled-checkbox {
   position: absolute;
@@ -2756,4 +2763,60 @@ p.styleProfile:hover{
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
+
+.pagination {
+  display: block;
+  width: 100%;
+  margin: 1em auto;
+  text-align: center;
+  margin-left: 300px;
+  float: center;
+}
+.pagination:after {
+  content: '';
+  clear: both;
+}
+
+.pagination-button {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #e0e0e0;
+  background-color: #eee;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+}
+.pagination-button:hover {
+  background-color: #ddd;
+  color: #3366cc;
+}
+.pagination-button.active {
+  background-color: #bbb;
+  border-color: #bbb;
+  color: #3366cc;
+}
+.pagination-button:first-of-type {
+  border-radius: 18px 0 0 18px;
+}
+.pagination-button:last-of-type {
+  border-radius: 0 18px 18px 0;
+}
+
+
+
+.article-loop {
+  
+  width: 100%;
+  padding: 1em 2em;
+}
+.alignButtons{
+  float: right;
+  margin-top: 40px;
+
+
+}
+.alignButtons button{
+  font-size: 15px;
+}
+
 
