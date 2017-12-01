@@ -4,7 +4,7 @@ namespace App;
 
 # Importing models
 use App\Documento;
-use App\Departamento;
+use App\Permiso;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -27,11 +27,9 @@ class Usuario extends Authenticatable
         $this->hasMany('Documento');
     }
 
-    public function departmento(){
-        $this->belongsTo('Departmento');
+    public function permisos(){
+        $this->hasMany('Permiso');
     }
-
-
 
     # Model methods
     public static function logMe($credentials){

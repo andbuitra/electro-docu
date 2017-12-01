@@ -19,16 +19,13 @@ class CrearTablaUsuarios extends Migration
             $table->string('apellidos');
             $table->string('cedula');
             $table->string('email');
-            $table->string('rol')->default('user');
-            $table->integer('departamento_id')->unsigned()->default('1');
+            $table->string('rol')->default('user');            
             $table->string('vercode');
             $table->string('verified')->default('0');
             $table->string('password');
-            $table->string('remember_token')->nullable();                        
+            $table->string('remember_token')->nullable();
+            $table->string('departamento');
             $table->timestamps();
-
-            $table->foreign('departamento_id')->references('id')->on('departamentos');
-
         });
 
     }

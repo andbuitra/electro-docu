@@ -11,17 +11,12 @@ class Permiso extends Model
       'id_usuario','descripcion','externo',
   ];
   
-  /* 
-  public function users(){
-    $this->ManytoMany('Departamento');
-  }
-  
-  public function user(){
-    $this->ManytoMany('Usuario');
-  }
-  */
   public function departamentos(){
     $this->belongsToMany('Departmaneto');
+  }
+
+  public function usuarios(){
+    $this->belongsToMany('Usuario');
   }
   
 }
