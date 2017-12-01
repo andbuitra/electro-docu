@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Usuario;
 use App\Departamento;
+use App\Permiso;
+
 
 class DashboardController extends Controller
 {
@@ -61,8 +63,9 @@ class DashboardController extends Controller
 
         $usuarios = Usuario::all(); 
         $departamentos = Departamento::all();
+        $permisos = Permiso::all();
 
-        return view('adminRegistros')->with(compact('usuarios'), compact('departamentos'));
+        return view('adminRegistros')->with(compact('usuarios'), compact('permisos'));
 
     }
 
@@ -94,6 +97,7 @@ class DashboardController extends Controller
         }
 
         $usuarios = Usuario::all();        
+        $permisos = Permiso::all();
         return view('adminPermiso')->with(compact('usuarios'));
         
     }
@@ -126,6 +130,7 @@ class DashboardController extends Controller
         if(!Auth::check()){
             redirect('/');
         }
+
 
         return view('detalles');
 

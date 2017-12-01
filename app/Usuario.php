@@ -7,6 +7,7 @@ use App\Documento;
 use App\Permiso;
 use App\Empleado;
 use App\Departamento;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
