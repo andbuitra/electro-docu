@@ -18,37 +18,37 @@
         <!-- Sidebar Navidation Menus-->
         <span class="heading">Main</span>
         <ul class="list-unstyled">
-          <li class="active">
+          <li class="{{ Request::is('/') ? 'active' : '' }}">
             <a href="/">
               <i class="icon-home"></i>Inicio</a>
           </li>
-          <li class="">
+          <li class="{{ Request::is('/estadisticas') ? 'active' : '' }} ">
             <a href="./">
               <i class="fa fa-line-chart"></i>Estadísticas</a>
           </li>
-          <li class="">
-            <a href="./">
+          <li class=" {{ Request::is('/inbox') ? 'active' : '' }} ">
+            <a href="{{URL::to('/')}}/inbox">
               <i class="fa fa-cloud-download"></i>Recibidos</a>
           </li>
-          <li class="">
-            <a href="./">
+          <li class="  {{ Request::is('/outbox') ? 'active' : '' }} ">
+            <a href="{{URL::to('/')}}/outbox">
               <i class="fa fa-cloud-upload"></i>Enviados</a>
           </li>          
         </ul>
         @if(Auth::user()->rol == "admin")
-          <span class="heading">Administrador</span>
-          <ul class="list-unstyled">
-            <li>
-              <a href="/admin/usuarios/verificacion">
-                <i class="fa fa-check-square-o"></i>Verificación de usuarios</a>
+          <span class="heading">Admin</span>
+          <ul class="list-unstyled">           
+            <li class=" {{ Request::is('/admin/usuarios/control') ? 'active' : '' }} ">
+              <a href="/admin/usuarios/control">
+                <i class="fa fa-check-square-o"></i>Control de usuarios</a>
             </li>
-            <li>
+            <li class=" {{ Request::is('/admin/usuarios/permisos') ? 'active' : '' }} ">
               <a href="/admin/usuarios/permisos">
                 <i class="fa fa-key"></i>Gestión de permisos</a>
             </li>            
             <li>
               <a href="/admin/usuarios">
-                <i class="fa fa-gear"></i>Configuración</a>
+                <i class="fa fa-gear"></i>Ajustes</a>
             </li>
             <li>
               <a href="/admin/usuarios">
