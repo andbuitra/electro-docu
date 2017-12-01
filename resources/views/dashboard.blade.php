@@ -14,8 +14,8 @@
 						<i class="icon-user"></i>
 					</div>
 					<div class="title">
-						<span>New
-							<br>Clients</span>
+						<span>Empleados
+							<br>Registrados</span>
 						<div class="progress">
 							<div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-violet"></div>
 						</div>
@@ -32,8 +32,8 @@
 						<i class="icon-padnote"></i>
 					</div>
 					<div class="title">
-						<span>Work
-							<br>Orders</span>
+						<span>Documentos
+							<br>por revisar</span>
 						<div class="progress">
 							<div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-red"></div>
 						</div>
@@ -50,8 +50,8 @@
 						<i class="icon-bill"></i>
 					</div>
 					<div class="title">
-						<span>New
-							<br>Invoices</span>
+						<span>Nuevos
+							<br>Mensajes</span>
 						<div class="progress">
 							<div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-green"></div>
 						</div>
@@ -68,8 +68,8 @@
 						<i class="icon-check"></i>
 					</div>
 					<div class="title">
-						<span>Open
-							<br>Cases</span>
+						<span>Documentos
+							<br>por enviar</span>
 						<div class="progress">
 							<div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-orange"></div>
 						</div>
@@ -95,7 +95,7 @@
 					<div class="text">
 						<strong>234</strong>
 						<br>
-						<small>Applications</small>
+						<small>Documentos</small>
 					</div>
 				</div>
 				<div class="statistic d-flex align-items-center bg-white has-shadow">
@@ -105,7 +105,7 @@
 					<div class="text">
 						<strong>152</strong>
 						<br>
-						<small>Interviews</small>
+						<small>Avisos</small>
 					</div>
 				</div>
 				<div class="statistic d-flex align-items-center bg-white has-shadow">
@@ -127,24 +127,37 @@
 			</div>
 			<div class="chart col-lg-3 col-12">
 				<!-- Bar Chart   -->
-				<div class="bar-chart has-shadow bg-white">
-					<div class="title">
-						<strong class="text-violet">95%</strong>
-						<br>
-						<small>Current Server Uptime</small>
-					</div>
-					<canvas id="barChartHome"></canvas>
-				</div>
+				
 				<!-- Numbers-->
 				<div class="statistic d-flex align-items-center bg-white has-shadow">
-					<div class="icon bg-green">
-						<i class="fa fa-line-chart"></i>
+					<div id="myBtn" class="modalN icon bg-green">
+						<i class="fa fa-plus"></i>
 					</div>
 					<div class="text">
-						<strong>99.9%</strong>
+						<strong>Redactar</strong>
 						<br>
-						<small>Success Rate</small>
+						<small>Crear un nuevo mensaje</small>
 					</div>
+				</div>
+				
+
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+
+				  <!-- Modal content -->
+				  <div class="modal-content">
+				    <span class="close">&times;</span>
+				    <p>Some text in the Modal..</p>
+				  </div>
+
+				</div>
+				<div class="bar-chart has-shadow bg-white">
+					<div class="title">
+						<strong class="text-violet">99.9%</strong>
+						<br>
+												<small>Success Rate</small>
+					</div>
+					<canvas id="barChartHome"></canvas>
 				</div>
 			</div>
 		</div>

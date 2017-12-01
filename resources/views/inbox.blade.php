@@ -9,6 +9,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="card">
+          <div class="card-header ">
+            <h3 >Inbox</h3>
+          </div>
           <div class="inboxWrapper">
             <div class="inboxHeader">
               <div class="header-input">
@@ -28,26 +31,29 @@
                 <table>
                   <thead>
                     <tr>
-                      <th></th>
+                      
                       <th class="titulo">Titulo</th>
                       <th class="remitente">Remitente</th>
                       <th class="fecha">Fecha</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="visible">
+                      
+                      <td class="titulo"><a href="{{URL::to('/')}}/detalles"> Documento para revisar, contabilidad 2016</a></td>
+                      <td class="remitente">Lucia contabilidad</td>
+                      <td class="fecha">12/11/2017</td>
                       <td ><input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
                                         <label for="styled-checkbox-1"></label></td>
-                      <td class="titulo"><a href="#"> Documento para revisar, contabilidad 2016</a></td>
-                      <td class="remitente">Lucia contabilidad</td>
-                      <td class="fecha">12/11/2017</td>
                     </tr> 
                     <tr class="visible">
-                      <td ><input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
-                                        <label for="styled-checkbox-2"></label></td>
-                      <td class="titulo"><a href="#">Documento para revisar, ventas 2016</a> </td>
+                      
+                      <td class="titulo"><a href="{{URL::to('/')}}/detalles">Documento para revisar, ventas 2016</a> </td>
                       <td class="remitente">Lucia contabilidad</td>
                       <td class="fecha">12/11/2017</td>
+                      <td ><input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
+                                        <label for="styled-checkbox-2"></label></td>
                     </tr> 
                    
                   </tbody>

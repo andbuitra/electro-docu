@@ -2833,16 +2833,19 @@ p.styleProfile:hover{
 /*Inbox*/
 .inboxWrapper {
   padding: 20px;
+  border-color: 1px #000;
 }
 
 .inboxHeader {
-  background: #eee;
-  border-bottom: 2px solid #ccc;
+  background: #ffec82;
+  border: 2px solid #d8d8d4;
   padding: 16px;
   overflow: hidden;
 }
 .inboxHeader .header-input {
   float: left;
+
+
 }
 .inboxHeader .header-input input {
   display: inline-block;
@@ -2853,7 +2856,7 @@ p.styleProfile:hover{
   height: 30px;
   padding: 6px 28px 6px 6px;
   border: 1px solid #ccc;
-  background: #f8f7f6 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iLTI1IDI3IDEyIDEyIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNLTE0LjggMzAuOWwtNC4yIDQuMi00LjItNC4yIi8+PC9zdmc+") center right 8px no-repeat;
+  background: #e5c654 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iLTI1IDI3IDEyIDEyIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNLTE0LjggMzAuOWwtNC4yIDQuMi00LjItNC4yIi8+PC9zdmc+") center right 8px no-repeat;
   border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2863,7 +2866,7 @@ p.styleProfile:hover{
   float: right;
 }
 .inboxHeader .header-pag button {
-  background: #222;
+  background: #efb61a;
   border: 0;
   color: white;
   font-size: 18px;
@@ -2877,26 +2880,41 @@ p.styleProfile:hover{
 
 .inboxWrapper table {
   width: 100%;
+  border: 1px solid #d8d8d4;
+
 }
 .inboxWrapper table thead {
-  background: #ccc;
+  background: #efb61a;
+  border: 1px solid #d8d8d4;
+  color: white;
 }
 .inboxWrapper table thead th {
-  border-bottom: 1px solid #222;
+  border: 1px solid #d8d8d4;
 }
 .inboxWrapper table tbody tr {
   display: none;
+  border: 1px solid #d8d8d4;
 }
 .inboxWrapper table tbody tr.visible {
   display: table-row;
+  border: 1px solid #d8d8d4;
 }
 .inboxWrapper table th,
 table td {
   text-align: left;
   padding: 12px;
   margin: 0;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #d8d8d4;
 }
 .inboxWrapper table th {
   font-weight: 600;
+}
+.inboxWrapper table tbody tr:hover{
+  background-color:#fff6b5;
+}
+.inboxWrapper a{
+  color: #f29e37;
+}
+.modalN{
+  cursor: pointer;
 }
