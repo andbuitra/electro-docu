@@ -24,7 +24,7 @@ class CrearTablaUsuarios extends Migration
             $table->string('verified')->default('0');
             $table->string('password');
             $table->string('remember_token')->nullable();
-            $table->string('departamento');
+            $table->string('departamento')->nullable();
             $table->timestamps();
         });
 

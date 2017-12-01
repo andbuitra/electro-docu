@@ -2828,3 +2828,75 @@ p.styleProfile:hover{
   
   width: 20px;
 }
+
+
+/*Inbox*/
+.inboxWrapper {
+  padding: 20px;
+}
+
+.inboxHeader {
+  background: #eee;
+  border-bottom: 2px solid #ccc;
+  padding: 16px;
+  overflow: hidden;
+}
+.inboxHeader .header-input {
+  float: left;
+}
+.inboxHeader .header-input input {
+  display: inline-block;
+  height: 24px;
+}
+.inboxHeader .header-input select {
+  border: 0;
+  height: 30px;
+  padding: 6px 28px 6px 6px;
+  border: 1px solid #ccc;
+  background: #f8f7f6 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iLTI1IDI3IDEyIDEyIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNLTE0LjggMzAuOWwtNC4yIDQuMi00LjItNC4yIi8+PC9zdmc+") center right 8px no-repeat;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 14px;
+}
+.inboxHeader .header-pag {
+  float: right;
+}
+.inboxHeader .header-pag button {
+  background: #222;
+  border: 0;
+  color: white;
+  font-size: 18px;
+  border-radius: 100px;
+}
+
+.inboxFooter {
+  text-align: right;
+  padding: 10px 0;
+}
+
+.inboxWrapper table {
+  width: 100%;
+}
+.inboxWrapper table thead {
+  background: #ccc;
+}
+.inboxWrapper table thead th {
+  border-bottom: 1px solid #222;
+}
+.inboxWrapper table tbody tr {
+  display: none;
+}
+.inboxWrapper table tbody tr.visible {
+  display: table-row;
+}
+.inboxWrapper table th,
+table td {
+  text-align: left;
+  padding: 12px;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+.inboxWrapper table th {
+  font-weight: 600;
+}
