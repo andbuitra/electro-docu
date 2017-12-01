@@ -84,7 +84,7 @@ class DashboardController extends Controller
     }
 
     #Metodo para ver los permisos (Bae luego lo acomodara)
-    public function permisos(){
+    public function privileges(){
         
         if(Auth::check()){
             return view('adminPermiso');

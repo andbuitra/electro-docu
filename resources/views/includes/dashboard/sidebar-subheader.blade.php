@@ -39,16 +39,20 @@
           <span class="heading">Administrador</span>
           <ul class="list-unstyled">
             <li>
-              <a href="/admin/usuarios">
-                <i class="fa fa-check-square-o"></i>Gestión de usuarios </a>
+              <a href="/admin/usuarios/verificacion">
+                <i class="fa fa-check-square-o"></i>Verificación de usuarios</a>
+            </li>
+            <li>
+              <a href="/admin/usuarios/permisos">
+                <i class="fa fa-key"></i>Gestión de permisos</a>
             </li>            
             <li>
               <a href="/admin/usuarios">
-                <i class="fa fa-gear"></i>Configuración </a>
+                <i class="fa fa-gear"></i>Configuración</a>
             </li>
             <li>
               <a href="/admin/usuarios">
-                <i class="fa fa-area-chart"></i>Estadísticas generales </a>
+                <i class="fa fa-area-chart"></i>Estadísticas generales</a>
             </li>
           </ul>
         @endif
