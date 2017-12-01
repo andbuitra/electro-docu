@@ -31,7 +31,7 @@
                   <h1 class="forgot-pass"> </h1>
 
                         <div class="downB formPadding form-group row">
-                          <button type="submit" class="btn btn-primary"><a href="{{URL::to('/')}}/login">Volver a inicio</a> </button>
+                          <button type="submit" onclick="window.location='/login'; class="btn btn-primary">Volver a inicio</button>
                             
                           
                         </div>
