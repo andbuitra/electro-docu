@@ -20,7 +20,7 @@ class CrearTablaUsuarios extends Migration
             $table->string('cedula');
             $table->string('email');
             $table->string('rol')->default('user');
-            $table->integer('departamento_id')->unsigned();
+            $table->integer('departamento_id')->unsigned()->default('1');
             $table->string('vercode');
             $table->string('verified')->default('0');
             $table->string('password');
