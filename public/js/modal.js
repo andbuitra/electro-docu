@@ -1,20 +1,22 @@
-// Get the modal
-var modal = document.getElementById('myModal');
+$(document).on('ready', function(){
+    $modal = $('.modal-frame');
+    $overlay = $('.modal-overlay');
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
+    /* Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers. */
+    $modal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
+      if($modal.hasClass('state-leave')) {
+        $modal.removeClass('state-leave');
+      }
+    });
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    $('.close').on('click', function(){
+      $overlay.removeClass('state-show');
+      $modal.removeClass('state-appear').addClass('state-leave');
+    });
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
+    $('.open').on('click', function(){
+      $overlay.addClass('state-show');
+      $modal.removeClass('state-leave').addClass('state-appear');
+    });
+
+  });
