@@ -17,7 +17,7 @@
 						<table class="tablaPermisos table table-striped table-hover">
 							<thead>
 							    <tr>
-							      <th rowspan="2" colspan="2" width="400px">Empleado</th>
+							      <th rowspan="2" colspan="2" >Empleado</th>
 							      <th colspan="5">Permisos</th>
 							    </tr>
 							    <tr>
@@ -38,7 +38,8 @@
 
 							  </thead>
 							  <tbody>
-							    <tr class="article-loop">
+							  	
+							    <tr >
 
 							      <td>brenda</td>
 							      <td>1093780786</td>
@@ -53,7 +54,10 @@
    								    <label for="styled-checkbox-3">Contabilidad</label>
    								    <br>
     								<input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="value4">
-   								    <label for="styled-checkbox-4">Gerencia</label>
+   								    <label for="styled-checkbox-4">Sistemas</label>
+   								    <br>
+    								<input class="styled-checkbox" id="styled-checkbox-5" type="checkbox" value="value5">
+   								    <label for="styled-checkbox-5">Gerencia</label>
    								    <br>
     								<input class="styled-checkbox" id="styled-checkbox-5" type="checkbox" value="value5">
    								    <label for="styled-checkbox-5">Sub-Gerencia</label>
@@ -66,7 +70,7 @@
     								<label for="styled-checkbox-8"></label></td>
 							      
 							    </tr>
-							   
+
 							 
 							  </tbody>
 						</table>

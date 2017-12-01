@@ -140,7 +140,6 @@ button, input {
 .card-header {
   background: #fff;
   padding: 15px;
-  
   border-bottom: 1px solid #eee;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
   
@@ -148,9 +147,11 @@ button, input {
 
 .card-header h1, .card-header h2, .card-header h3, .card-header h4, .card-header h5, .card-header h6 {
   margin-bottom: 0;
-  
 }
 
+.moveCenter{
+  text-align: center;
+}
 .card-body {
   padding: 20px;
   
@@ -1828,15 +1829,15 @@ section.forms .line {
   color: #c21e0f;
 }
 a.verifyt{
-	font-size: 20px;
-	color: #f2b724;
-	text-align: justify;
+  font-size: 20px;
+  color: #f2b724;
+  text-align: justify;
 }
 
 h1.forgot-pass{
-	font-size: 17px;
-	color: #f2b724;
-	text-align: justify;
+  font-size: 17px;
+  color: #f2b724;
+  text-align: justify;
 }
 
 .login-page .form-holder .form small {
@@ -2585,18 +2586,18 @@ a.text-primary:focus, a.text-primary:hover {
 /** Estilos nuevos**/
 
 .paddingBotones{
-	margin-left: 15px;
-	
+  margin-left: 15px;
+  
 }
 
 
 p.styleProfile:hover{
-	text-decoration: underline;
-	cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
 }
-	
+  
 .imageHover:hover{
-	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 #myImg {
     border-radius: 5px;
@@ -2687,10 +2688,10 @@ p.styleProfile:hover{
 /** Estilos de perfil de usuarios**/
 .align-profile{
     margin-left: 260px;
-	margin-top: 50px;
+  margin-top: 50px;
 }
 .align-profile-title{
-	margin-left:30px;
+  margin-left:30px;
 }
 
 .userImg img{
@@ -2706,15 +2707,9 @@ p.styleProfile:hover{
 }
 .tablaPermisos table{
   border: 1px #000;
-  vertical-align: center;
-
-
-}
-.tablaPermisos td, th {
-  border: solid 2px #eceeef
-
 }
 
+.tablaPermisos td, th {border: solid 2px #eceeef}
 
 .styled-checkbox {
   position: absolute;
@@ -2732,7 +2727,7 @@ p.styleProfile:hover{
   vertical-align: text-top;
   width: 20px;
   height: 20px;
-  background: white;
+  background: #eab223;
 }
 .styled-checkbox:hover + label:before {
   background:   #eab223;
@@ -2766,12 +2761,15 @@ p.styleProfile:hover{
 
 .pagination {
   display: block;
-  width: 100%;
+  width: 75%;
   margin: 1em auto;
   text-align: center;
-  margin-left: 300px;
+  align-content: center;
+}
+.ubicate{
   float: center;
 }
+
 .pagination:after {
   content: '';
   clear: both;
@@ -2802,12 +2800,15 @@ p.styleProfile:hover{
   border-radius: 0 18px 18px 0;
 }
 
-
+/* arbitrary styles */
+.heading {
+  text-align: center;
+  max-width: 500px;
+  margin: 20px auto;
+}
 
 .article-loop {
   
-  width: 100%;
-  padding: 1em 2em;
 }
 .alignButtons{
   float: right;
@@ -2819,4 +2820,11 @@ p.styleProfile:hover{
   font-size: 15px;
 }
 
+.tableIndex{
+  cursor: pointer;
+}
 
+.herramienta{
+  
+  width: 20px;
+}

@@ -26,12 +26,13 @@
 						<h3>Gestionar usuarios</h3>
 					</div>
 					<div style="overflow-x:auto;" class="card-body">
-						<table class="table table-striped table-hover">
+						<table class="tablaPermisos table table-striped table-hover">
 							<thead>
 								<tr>
 									<th>Id</th>
 									<th>Nombre</th>
 									<th>Correo</th>
+									<th>Departamento</th>
 									<th>Acción</th>
 
 								</tr>
@@ -42,6 +43,20 @@
 									<th scope="row">{{ $usuario->id }}</th>
 									<td>{{ $usuario->nombres }}</td>
 									<td>{{ $usuario->email }}</td>
+									<td>
+									  <div class="form-group row">
+                         
+				                          <div class="col-sm-9 select">
+				                            <select name="account" class="form-control">
+				                              <option>Ventas</option>
+				                              <option>Contabilidad</option>
+				                              <option>Sistemas</option>
+				                              <option>Sub-Gerencia</option>
+				                            </select>
+				                          </div>
+				                      </div>
+
+									</td>
 									<td>
 										@if($usuario->verified == 1)
 										<button type="button" class="btn btn-success disabled">Confirmar</button>

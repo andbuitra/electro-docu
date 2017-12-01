@@ -30,3 +30,4 @@ Route::get('/admin/usuarios/verificacion', 'DashboardController@manageUsers');
 Route::post('/admin/usuarios/ajax-manage', 'DashboardController@activate');
 Route::get('/admin', 'DashboardController@adminRoot');
 Route::get('/admin/usuarios/permisos', 'DashboardController@privileges');
+
