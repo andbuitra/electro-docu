@@ -19,12 +19,21 @@ class CreatePermisosTable extends Migration
             $table->boolean('externo');
             $table->timestamps();
         });
-        Schema::create('permisos_Usuario', function (Blueprint $table) {
+        Schema::create('permisos_usuario', function (Blueprint $table) {
           $table->integer('usuario_id')->unsigned()->index();
           $table->foreign('usuario_id')->references('id')->on('usuarios');
 
-          $table->integer('id')->unsigned()->index();
-          $table->foreign('id')->references('id')->on('permisos');
+          $table->integer('permiso_id')->unsigned()->index();
+          $table->foreign('permiso_id')->references('id')->on('permisos');
+        });
+
+        Schema::create('departamento_permiso', function(Blueprint $table){
+            $table->integer('departamento_id')->unsigned()->index();
+            $table->foreign('departamento_id')->references('id')->on('departamentos');
+
+            $table->integer('permiso_id')->unsigned()->index();
+            $table->foreign('permiso_id')->references('id')->on('permisos');
+
         });
     }
 

@@ -28,7 +28,7 @@ class Usuario extends Authenticatable
     }
 
     public function departmento(){
-        $this->has('Departmento');
+        $this->belongsTo('Departmento');
     }
 
 

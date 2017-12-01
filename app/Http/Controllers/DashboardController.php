@@ -100,4 +100,13 @@ class DashboardController extends Controller
         return redirect('/admin/usuarios/control');
     }
 
+    public function inbox(){
+        if(!Auth::check()){
+            redirect('/');
+        }
+
+        return view('inbox');
+
+    }
+
 }

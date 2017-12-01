@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Usuario;
+use App\Permiso;
 use Illuminate\Database\Eloquent\Model;
 
 class Departamento extends Model
@@ -13,6 +14,10 @@ class Departamento extends Model
 
     public function usuarios(){
         $this->hasMany('Usuario');
+    }
+
+    public function permisos(){
+        $this->hasMany('Permiso');
     }
 
 }
