@@ -17,15 +17,15 @@ class CrearTablaUsuarios extends Migration
             $table->string('nombres');
             $table->increments('id');
             $table->string('apellidos');
-            $table->string('cedula');
-            $table->string('email');
+            $table->string('cedula')->unique();
+            $table->string('email')->unique();
             $table->string('rol')->default('user');            
             $table->string('vercode');
             $table->string('verified')->default('0');
             $table->string('password');
             $table->string('remember_token')->nullable();
-            $table->string('departamento');
-            $table->timestamps();
+            $table->string('departamento')->nullable();                        
+            $table->timestamps();           
         });
 
     }

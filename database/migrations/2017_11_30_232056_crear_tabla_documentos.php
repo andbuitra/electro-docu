@@ -20,14 +20,6 @@ class CrearTablaDocumentos extends Migration
             $table->string('path');
             $table->timestamps();
         });
-
-        Schema::create('documento_usuario', function(Blueprint $table) {
-            $table->integer('documento_id')->unsigned()->index();
-            $table->foreign('documento_id')->references('id')->on('documentos');
-
-            $table->integer('usuario_id')->unsigned()->index();
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
-        });
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App;
 # Importing models
 use App\Documento;
 use App\Permiso;
+use App\Empleado;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -24,11 +25,15 @@ class Usuario extends Authenticatable
 
     # Model's associations
     public function documentos(){
-        $this->hasMany('Documento');
+        return $this->hasMany('Documento');
     }
 
     public function permisos(){
-        $this->hasMany('Permiso');
+        return $this->hasMany('Permiso');
+    }
+
+    public function empleado(){
+        return $this->belongsTo('Empleado');
     }
 
     # Model methods
@@ -58,11 +63,23 @@ class Usuario extends Authenticatable
 
     # Returns true if user was successfully registered
     public static function registrar($credentials){
-        $usuario = self::create($credentials);
+        if(self::verifyID($credentials)){
+            return false;
+        }
+        $usuario = self::create($credentials);       
         if(!$usuario->id){
             return false;
         }
         return true;
+    }
+
+    private static function verifyID($credentials){
+        $cedula = $credentials['cedula'];
+        $usuarioEmpleado = Empleado::where('cedula', $cedula)->get()->first();
+        if($usuarioEmpleado === null){
+            return true;
+        }
+        return false;
     }
 
 }

@@ -30,19 +30,19 @@
 							</thead>
 							<tbody class="tableIndex">
 
-								@foreach ($documentos as $documento)
+								
 								<tr>
 									<td>
 										<input style="center" class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
 										<label for="styled-checkbox-1"></label>
 									</td>
 									<td>
-										<a href="#"> {{ $documento->titulo }} </a>
+										<a href="#"></a>
 									</td>
 									<td>Lucia- contablidad</td>
 									<td>12/11/2017</td>
 								</tr>
-								@endforeach
+								
 							</tbody>
 						</table>
 					</div>
