@@ -18,7 +18,7 @@ class CrearTablaUsuarios extends Migration
             $table->increments('id');
             $table->string('apellidos');
             $table->string('cedula');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('rol')->default('user');
             $table->string('vercode');
             $table->string('verified')->default('0');
