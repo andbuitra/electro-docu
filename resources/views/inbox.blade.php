@@ -33,7 +33,7 @@
                     <tr>
                       
                       <th class="titulo">Titulo</th>
-                      <th class="remitente">Remitente</th>
+                      <th class="remitente">Remitente(s)</th>
                       <th class="fecha">Fecha</th>
                       <th></th>
                     </tr>
