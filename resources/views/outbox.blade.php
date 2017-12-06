@@ -39,31 +39,19 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach ($msgs as $msg)
 								<tr class="visible">
-
 									<td class="titulo">
-										<a href="{{URL::to('/')}}/detalles"> Documento para revisar, contabilidad 2016</a>
+										<a href="{{URL::to('/')}}/detalles/{{$msg->id}}">{{$msg->titulo}}</a>
 									</td>
-									<td class="remitente">Lucia contabilidad</td>
-									<td class="fecha">12/11/2017</td>
+									<td class="remitente">{{$msg->usuario_id}}</td>
+									<td class="fecha">{{$msg->created_at}}</td>
 									<td>
 										<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
 										<label for="styled-checkbox-1"></label>
 									</td>
 								</tr>
-								<tr class="visible">
-
-									<td class="titulo">
-										<a href="{{URL::to('/')}}/detalles">Documento para revisar, ventas 2016</a>
-									</td>
-									<td class="remitente">Lucia contabilidad</td>
-									<td class="fecha">12/11/2017</td>
-									<td>
-										<input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
-										<label for="styled-checkbox-2"></label>
-									</td>
-								</tr>
-
+								@endforeach
 							</tbody>
 						</table>
 						<div class="footer">

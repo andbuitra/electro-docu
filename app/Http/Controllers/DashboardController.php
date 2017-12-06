@@ -7,6 +7,7 @@ use Auth;
 use App\Usuario;
 use App\Departamento;
 use App\Permiso;
+use App\Documento;
 
 
 class DashboardController extends Controller
@@ -15,9 +16,10 @@ class DashboardController extends Controller
     public function index(){
 		
         if(Auth::check()){
-            return view('dashboard');
+            $usuarios = Usuario::all();
+            return view('dashboard')->with(compact('usuarios'));
         }
-        
+               
         return redirect('/login');        
         
     }
@@ -122,18 +124,44 @@ class DashboardController extends Controller
             redirect('/');
         }
 
-        $msgs = Auth::user()->enviados();
+        $msgs = Auth::user()->enviados()->get();
         return view('outbox')->with(compact('msgs'));
     }
 
-    public function detalles(){
+    public function detalles($id){
         if(!Auth::check()){
             redirect('/');
         }
 
+        if($id === null){
+            return redirec('/inbox');
+        }
 
+        $msgid = request()->segment(2);
+        $doc = Documento::where('id', $msgid)->get()->first();
+
+        return view('detalles')->with(compact('doc'));
+
+    }
+
+    public function enviar(){
+        
+        $titulo = request()->input('titulo');
+        $notas = request()->input('notas');
+        $receptor = request()->input('receptor');
+        $file = request()->file('documento')->store('documentos');
+        
+        if(Documento::enviar($titulo, $notas, $receptor, $file)){
+            return redirect('/outbox');
+        }
+
+        return Error;
+
+
+    }
+
+    public function detallesTest(){
         return view('detalles');
-
     }
 
 }

@@ -17,7 +17,9 @@ Route::get('/', 'DashboardController@index');
 Route::get('perfil', 'DashboardController@perfil');
 Route::get('/inbox', 'DashboardController@inbox');
 Route::get('/outbox', 'DashboardController@outbox');
-Route::get('/detalles', 'DashboardController@detalles');
+Route::get('/detalles/{id}', 'DashboardController@detalles');
+Route::get('/detalles', 'DashboardController@detallesTest');
+Route::post('/enviar', 'DashboardController@enviar');
 
 
 # Rutas de gestión de usuario
