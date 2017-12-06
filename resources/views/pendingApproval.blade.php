@@ -29,6 +29,12 @@
 				  <h1 class="forgot-pass">Tu solicitud sera verificada por un administrador quien te dara acceso a la plataforma. 
 				  Una vez tu cuenta sea aprobada se enviara un link de verificación a tu cuenta para completar el proceso de registro.</h1>
                   <h1 class="forgot-pass"> </h1>
+
+                        <div class="downB formPadding form-group row">
+                          <button type="submit" onclick="window.location='/login'; class="btn btn-primary">Volver a inicio</button>
+                            
+                          
+                        </div>
               </div>
             </div>
           </div>

@@ -18,7 +18,7 @@ class CreateEmpleadosTable extends Migration
             $table->string('cedula')->unique();
             $table->integer('usuario_id')->unsigned()->index()->nullable();
             $table->string('nombre');
-            $table->string('apellido');            
+            $table->string('apellido');
             $table->timestamps();
         });
     }
