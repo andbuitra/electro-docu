@@ -27,7 +27,7 @@ class Usuario extends Authenticatable
 
     # Model's associations
     public function enviados(){
-        return $this->hasMany('App\Documento');
+        return $this->hasMany('Documento');
     }
 
     public function permisos(){
@@ -96,7 +96,7 @@ class Usuario extends Authenticatable
         return DB::table('usuarios')
         ->join('documentos', 'usuarios.id', '=', 'documentos.receptor')
         ->select('documentos.id', 'documentos.titulo', 'documentos.path', 'documentos.created_at')
-        ->where('documentos.receptor', '=', $usuario_id)->get();
+        ->where('documentos.receptor', '=', $usuario_id)->get()->reverse();
     }
 
 }

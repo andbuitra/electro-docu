@@ -75,8 +75,7 @@
 
 								</tr>
 								@endforeach
-							</tbody>
-							<<<<<<< HEAD=======>>>>>>> d4e52f9a213cec30cc03152f5153b0441db72be1
+							</tbody>							
 						</table>
 						<div class="alignButtons">
 							<button type="button" class="btn btn-success">Guardar</button>

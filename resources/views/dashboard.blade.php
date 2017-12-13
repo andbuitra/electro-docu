@@ -154,85 +154,34 @@
 					<canvas id="barChartHome"></canvas>
 				</div>
 			</div>
-			<div class="modal-frame">
-				<div class="modalI">
-					<div class="modal-inset">
-						<div class="button close">
-							<i class="fa fa-close"></i>
-						</div>
-
-						<div class="modal-body">
-							<form class="form-horizontal" action="/enviar" method="post" enctype="multipart/form-data">
-								{{ csrf_field() }}
-								<div class="form-group row">
-									<label class="col-sm-3 form-control-label">Titulo</label>
-									<div class="col-sm-9">
-										<input type="text" class="form-control" name="titulo" required>
-									</div>
-								</div>
-
-
-								<div class="line"></div>
-								<div class="form-group row">
-									<label class="col-sm-3 form-control-label">Notas</label>
-									<div class="col-sm-9">
-										<input type="section" class="form-control" name="notas" required>
-									</div>
-								</div>
-								<div class="line"></div>
-								<div class="form-group row">
-									<label class="col-sm-3 form-control-label">Receptor</label>
-									<div class="col-sm-9">
-										<select name="receptor">
-										@foreach ($usuarios as $usuario)
-										<option value="{{$usuario->id}}">{{$usuario->nombres}}</option>
-										@endforeach
-										</select>
-									</div>
-								</div>
-								<!--
-								<div class="form-group row">
-									<label class="col-sm-3 form-control-label">Receptor:</label>
-									<div class="col-sm-9">
-										<fieldset class="multiple-select-widget" tabindex="0">
-											<div>
-												
-												@foreach ($usuarios as $usuario)
-												<label>
-													<input type="checkbox" name="{{$usuario->id}}" checked="" />
-													<span>{{ $usuario->nombres}}</span>
-												</label>												
-												@endforeach
-											</div>
-										</fieldset>
-
-									</div>
-								</div>
-								-->
-								<div class="line"></div>
-								<div class="form-group row">
-									<label class="col-sm-3 form-control-label">Documento</label>
-									<div class="col-sm-9">
-										<input type="file" class="form-control" name="documento">
-									</div>
-								</div>
-
-
-								<div class="line"></div>
-								<div class="formPadding form-group row">
-									<button type="submit" class="btn btn-primary">Enviar</button>
-									<button type="submit" onclick="" class="buttonPadding btn btn-secondary">Cancelar</button>
-
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
+			@include('new-message')
 			<div class="modal-overlay"></div>
 		</div>
 	</div>
 </section>
+
+<script>
+	function getUsersOnDepartment(departamento_id){
+		$.ajax({
+			type: "POST",
+			url: "/ajax-usuarios-receptores",
+			data: {
+				"_token": "{{csrf_token()}}",
+				"departamento_id" : departamento_id
+			},
+			success : function(data){
+
+				var select = document.getElementById('user-receptor');
+				for(index = 0; index<data.lenght; index++){
+					var opt = document.createElement('option');
+					opt.value=data[index].nombres+' '+data[index].apellidos;
+					select.appendChild(opt);
+				}
+			}
+			dataType: JSON
+		});
+	}
+</script>
 
 
 @endsection

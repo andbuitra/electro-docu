@@ -16,8 +16,10 @@ class DashboardController extends Controller
     public function index(){
 		
         if(Auth::check()){
-            $usuarios = Usuario::all();
-            return view('dashboard')->with(compact('usuarios'));
+            //$usuarios = Usuario::all();
+            $usuarios = Usuario::where('id', '!=', Auth::user()->id)->get();
+            $departamentos = Departamento::allowedDepartments(Auth::user()->id);
+            return view('dashboard')->with(compact('departamentos'));
         }
                
         return redirect('/login');        
@@ -74,7 +76,8 @@ class DashboardController extends Controller
     public function activate(){
         $user_id = request()->input('id');
         $verified = request()->input('verified');
-        $usuario = Usuario::where('id', $user_id)->get()->first();
+        //$usuario = Usuario::where('id', $user_id)->get()->first();
+        $usuario = Usuario::find($user_id);
 
         $usuario->verified = $verified;
         if($usuario->save()){
@@ -108,60 +111,9 @@ class DashboardController extends Controller
         return redirect('/admin/usuarios/control');
     }
 
-    public function inbox(){
-        if(!Auth::check()){
-            redirect('/');
-        }
-
-        $msgs = Auth::user()->recibidos(Auth::user()->id);
-
-        return view('inbox')->with(compact('msgs'));
-
-    }
-
-    public function outbox(){
-        if(!Auth::check()){
-            redirect('/');
-        }
-
-        $msgs = Auth::user()->enviados()->get();
-        return view('outbox')->with(compact('msgs'));
-    }
-
-    public function detalles($id){
-        if(!Auth::check()){
-            redirect('/');
-        }
-
-        if($id === null){
-            return redirec('/inbox');
-        }
-
-        $msgid = request()->segment(2);
-        $doc = Documento::where('id', $msgid)->get()->first();
-
-        return view('detalles')->with(compact('doc'));
-
-    }
-
-    public function enviar(){
-        
-        $titulo = request()->input('titulo');
-        $notas = request()->input('notas');
-        $receptor = request()->input('receptor');
-        $file = request()->file('documento')->store('documentos');
-        
-        if(Documento::enviar($titulo, $notas, $receptor, $file)){
-            return redirect('/outbox');
-        }
-
-        return Error;
-
-
-    }
-
-    public function detallesTest(){
-        return view('detalles');
+    public function usersPerDepartment(){
+        $departamento_id = request()->input('departamento_id');        
+        return Usuario::where('departamento_id', $departamento_id)->get()->toJson();
     }
 
 }

@@ -13,7 +13,7 @@ class Documento extends Model
     ];
 
     public function usuario(){
-        $this->belongsTo('App\Usuario');
+        return $this->belongsTo('App\Usuario');
     }
 
     public static function enviar($titulo, $notas, $receptor, $file){

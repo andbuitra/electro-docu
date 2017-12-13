@@ -61,15 +61,18 @@
 												<div class="form-group row">
 													<label class="col-sm-3 form-control-label">Descarga</label>
 													<div class="col-sm-9">
-														<a href={{ asset('/img/ial3JQdnYI7T4yudfylcaP0xGjByPRLk2ibkrX6c.png')}}>Descarga</a>
+														<a href={{ url('storage').'/'.$doc->path }}>Descarga</a>
 													</div>
 												</div>
 
 												<div class="line"></div>
 												<div class="form-group row">
 													<div class="col-sm-4 offset-sm-3">
-														<button type="submit" class="btn btn-secondary">Cancel</button>
-														<button type="submit" class="btn btn-primary">Save changes</button>
+														@if($doc->usuario->id === Auth::user()->id)
+														<a href="{{ url('/outbox') }}" class="btn btn-secondary">Volver</a>
+														@else
+														<a href="{{ url('/inbox') }}" class="btn btn-secondary">Volver</a>
+														@endif
 													</div>
 												</div>
 											</form>

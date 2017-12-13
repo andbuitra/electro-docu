@@ -25,7 +25,7 @@ class CrearTablaUsuarios extends Migration
             $table->string('password');
             $table->string('remember_token')->nullable();
 
-            $table->string('departamento') ->nullable();
+            //$table->integer('departamento_id')->unsigned()->index();
             $table->timestamps();
 
         });

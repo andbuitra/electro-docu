@@ -12,9 +12,10 @@ class Permiso extends Model
   ];
   
   public function departamentos(){
-    $this->belongsToMany('Departmaneto');
+    $this->belongsToMany('Departamento');
   }
 
+  # Probably won't be used
   public function usuarios(){
     $this->belongsToMany('Usuario');
   }

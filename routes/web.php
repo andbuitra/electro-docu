@@ -15,11 +15,7 @@
 # Rutas del dashboard
 Route::get('/', 'DashboardController@index');
 Route::get('perfil', 'DashboardController@perfil');
-Route::get('/inbox', 'DashboardController@inbox');
-Route::get('/outbox', 'DashboardController@outbox');
-Route::get('/detalles/{id}', 'DashboardController@detalles');
-Route::get('/detalles', 'DashboardController@detallesTest');
-Route::post('/enviar', 'DashboardController@enviar');
+Route::post('ajax-usuarios-receptores', 'DashboardController@usersPerDepartment');
 
 
 # Rutas de gestión de usuario
@@ -36,4 +32,12 @@ Route::get('/admin/usuarios/control', 'DashboardController@manageUsers');
 Route::post('/admin/usuarios/ajax-manage', 'DashboardController@activate');
 Route::get('/admin', 'DashboardController@adminRoot');
 Route::get('/admin/usuarios/permisos', 'DashboardController@privileges');
+
+#Rutas para envío y recepción de mensajes
+Route::get('/inbox', 'MessagesController@inbox');
+Route::get('/outbox', 'MessagesController@outbox');
+Route::get('/detalles/{id}', 'MessagesController@detalles');
+//Route::get('/detalles', 'MessagesController@detallesTest');
+Route::post('/enviar', 'MessagesController@enviar');
+
 
