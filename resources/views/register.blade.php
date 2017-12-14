@@ -44,7 +44,8 @@
                      
                     </div>
                     <div class="form-group">
-                      <input id="register-passowrd" type="password" name="regPassword" placeholder="Contrasela" equired class="input-material">
+
+                      <input id="register-passowrd" type="password" name="regPassword" placeholder="Contraseña" equired class="input-material">
                      
                     </div>
                     <div class="form-group terms-conditions">
