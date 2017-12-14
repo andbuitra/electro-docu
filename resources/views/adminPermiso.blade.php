@@ -107,7 +107,6 @@
 				}
 
 			},
-      dataType: JSON
     });
   }
 

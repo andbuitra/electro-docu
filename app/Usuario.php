@@ -3,7 +3,7 @@
 namespace App;
 
 # Importing models
-use App\Documento;
+
 use App\Permiso;
 use App\Empleado;
 use App\Departamento;
@@ -27,7 +27,7 @@ class Usuario extends Authenticatable
 
     # Model's associations
     public function enviados(){
-        return $this->hasMany('Documento');
+        return $this->hasMany('App\Documento');
     }
 
     public function permisos(){

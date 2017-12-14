@@ -52,7 +52,7 @@ class UsersTableSeeder extends Seeder{
                 'vercode' => 'lolequisde', 
                 'departamento_id' => '1',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'updated_at' => trim(Carbon::now()->format('Y-m-d H:i:s'))
             ],
             [
                 'nombres' => 'Jane',            
@@ -65,7 +65,7 @@ class UsersTableSeeder extends Seeder{
                 'vercode' => 'lolequisde', 
                 'departamento_id' => '1',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'updated_at' => trim(Carbon::now()->format('Y-m-d H:i:s'))
 
             ]
         ]);

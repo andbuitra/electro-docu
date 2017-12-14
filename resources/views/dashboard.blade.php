@@ -159,29 +159,31 @@
 		</div>
 	</div>
 </section>
-
+@endsection @section('js')
 <script>
-	function getUsersOnDepartment(departamento_id){
+	$ ( document ).ready(getUsersOnDepartment());
+
+	function getUsersOnDepartment(){
+		$('#user-receptor').empty();
 		$.ajax({
 			type: "POST",
 			url: "/ajax-usuarios-receptores",
 			data: {
 				"_token": "{{csrf_token()}}",
-				"departamento_id" : departamento_id
+				"departamento" : document.getElementById('depts-select').value
 			},
 			success : function(data){
-
+				var json = JSON.parse(data);				
 				var select = document.getElementById('user-receptor');
-				for(index = 0; index<data.lenght; index++){
-					var opt = document.createElement('option');
-					opt.value=data[index].nombres+' '+data[index].apellidos;
-					select.appendChild(opt);
+				for(i = 0; i < Object.keys(json).length; i++){					
+					var htmlToParse = '<option value="'+json[i].id+'">'+json[i].nombres+' '+json[i].apellidos+'</option>';
+					var option = $.parseHTML(htmlToParse);
+					$('#user-receptor').append(option);
+					
 				}
-			}
-			dataType: JSON
+			}			
 		});
 	}
+
 </script>
-
-
 @endsection

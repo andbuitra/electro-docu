@@ -27,9 +27,9 @@
 					<div class="form-group row">
 						<label class="col-sm-3 form-control-label">Departamento Receptor</label>
 						<div class="col-sm-9">
-							<select name="departamento-receptor" id="depts-select">
+							<select name="departamento-receptor" id="depts-select" onChange="getUsersOnDepartment()">								
 								@foreach ($departamentos as $departamento)
-								<option onClick"getUsersOnDepartment({{$departamento->id}})">{{ $departamento->name }}</option>
+								<option>{{ $departamento->name }}</option>								
 								@endforeach
 							</select>
 						</div>
@@ -37,7 +37,7 @@
 					<div class="form-group row">
 						<label class="col-sm-3 form-control-label">Usuario Receptor</label>
 						<div class="col-sm-9">
-							<select name="usuario-receptor" id="user-receptor">
+							<select name="receptor" id="user-receptor">
 								
 							</select>
 						</div>

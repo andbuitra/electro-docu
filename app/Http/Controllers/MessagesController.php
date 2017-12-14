@@ -47,10 +47,10 @@ class MessagesController extends Controller
 
     public function outbox(){
         if(!Auth::check()){
-            redirect('/');
+            return redirect('/');
         }
 
-        $msgs = Auth::user()->enviados()->get();
+        $msgs = Auth::user()->enviados()->get();        
         return view('outbox')->with(compact('msgs'));
     }
 

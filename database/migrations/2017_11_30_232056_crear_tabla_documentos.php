@@ -22,6 +22,8 @@ class CrearTablaDocumentos extends Migration
             $table->integer('usuario_id')->unsigned()->index();
             # ID del Usuario receptor
             $table->integer('receptor')->unsigned()->index();
+            $table->tinyInteger('leido')->default(0);
+            $table->tinyInteger('revisado')->default(0);
             $table->timestamps();
         });
 

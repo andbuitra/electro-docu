@@ -112,8 +112,10 @@ class DashboardController extends Controller
     }
 
     public function usersPerDepartment(){
-        $departamento_id = request()->input('departamento_id');        
-        return Usuario::where('departamento_id', $departamento_id)->get()->toJson();
+        $dep_name = request()->input('departamento');        
+        $departamento = Departamento::where('name', $dep_name)->get()->first();
+
+        return Usuario::where('departamento_id', $departamento->id)->where('id', '!=', Auth::user()->id)->get()->toJson();
     }
 
 }

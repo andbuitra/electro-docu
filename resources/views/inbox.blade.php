@@ -44,7 +44,8 @@
 									<td class="titulo">
 										<a href="{{URL::to('/')}}/detalles/{{$msg->id}}">{{$msg->titulo}}</a>
 									</td>
-									<td class="remitente">Jane Doe</td>
+									
+									<td class="remitente">{{ $msg->remitente }}</td>
 									<td class="fecha">{{ $msg->created_at }}</td>
 									<td>
 										<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
