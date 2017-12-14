@@ -1554,6 +1554,7 @@ form label {
   font-weight: 300;
 }
 
+
 .checkbox-template, .radio-template {
   transform: translateY(3px);
   -webkit-user-select: none;

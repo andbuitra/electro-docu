@@ -19,15 +19,15 @@
 					<div class="line"></div>
 					<div class="form-group row">
 						<label class="col-sm-3 form-control-label">Notas</label>
-						<div class="col-sm-9">
-							<input type="section" class="form-control" name="notas" required>
+						<div class="col-sm-9">							
+							<textarea name="notas" class="form-control" required=""></textarea>
 						</div>
 					</div>
 					<div class="line"></div>
 					<div class="form-group row">
 						<label class="col-sm-3 form-control-label">Departamento Receptor</label>
 						<div class="col-sm-9">
-							<select name="departamento-receptor" id="depts-select" onChange="getUsersOnDepartment()">								
+							<select name="departamento-receptor" class="form-control" id="depts-select" onChange="getUsersOnDepartment()">								
 								@foreach ($departamentos as $departamento)
 								<option>{{ $departamento->name }}</option>								
 								@endforeach
@@ -37,7 +37,7 @@
 					<div class="form-group row">
 						<label class="col-sm-3 form-control-label">Usuario Receptor</label>
 						<div class="col-sm-9">
-							<select name="receptor" id="user-receptor">
+							<select name="receptor" class="form-control" id="user-receptor">
 								
 							</select>
 						</div>
