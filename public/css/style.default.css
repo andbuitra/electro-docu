@@ -1639,31 +1639,29 @@ input.input-material:focus {
   border-color: #f2b724;
 
 }
-
-input.input-material ~ label {
-  color: #fff;
-  position: absolute;
-  top: 14px;
-  left: 0;
-  cursor: text;
-  transition: all 0.2s;
+.input-material::-moz-placeholder {
+  font-size: 0.9em;
   font-weight: 300;
-}
-
-input.input-material ~ label.error {
-  color: #d9534f;
-  font-size: 0.75em;
-  position: absolute;
-  top: auto;
-  bottom: -30px;
-  left: 0;
-}
-
-input.input-material ~ label.active {
-  font-size: 0.8em;
-  top: -10px;
+  font-family: "Poppins", sans-serif;
   color: #fff;
 }
+
+.input-material::-webkit-input-placeholder {
+  font-size: 0.9em;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+.input-material:-ms-input-placeholder {
+  font-size: 0.9em;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+
+
 
 .form-group-material {
   position: relative;
