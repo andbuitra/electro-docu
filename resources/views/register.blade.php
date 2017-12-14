@@ -25,7 +25,7 @@
             <div class="col-lg-6 bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
-                  <form id="register-form" method="POST" action="/registro">
+                  <form id="register-form" method="post" action="/registro">
                     {{ csrf_field() }}
                     <div class="form-group">
                       <input id="register-firstname" type="text" name="regNombres" placeholder="Nombres" required class="input-material">
@@ -44,7 +44,7 @@
                      
                     </div>
                     <div class="form-group">
-                      <input id="register-passowrd" type="password" name="regPassword" placeholder="Correo" equired class="input-material">
+                      <input id="register-passowrd" type="password" name="regPassword" placeholder="Contrasela" equired class="input-material">
                      
                     </div>
                     <div class="form-group terms-conditions">

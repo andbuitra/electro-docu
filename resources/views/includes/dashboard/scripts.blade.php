@@ -11,5 +11,6 @@
   	<script src="{{ asset('js/modal.js')}} "></script>
     <script src="{{ asset('js/pagination.js')}} "></script>
     <script src="{{ asset('js/inbox.js')}} "></script>
+
     
   
