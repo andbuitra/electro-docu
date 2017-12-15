@@ -19,7 +19,7 @@
 					<div class="line"></div>
 					<div class="form-group row">
 						<label class="col-sm-3 form-control-label">Notas</label>
-						<div class="col-sm-9">							
+						<div class="col-sm-9">
 							<textarea name="notas" class="form-control" required=""></textarea>
 						</div>
 					</div>
@@ -27,9 +27,9 @@
 					<div class="form-group row">
 						<label class="col-sm-3 form-control-label">Departamento Receptor</label>
 						<div class="col-sm-9">
-							<select name="departamento-receptor" class="form-control" id="depts-select" onChange="getUsersOnDepartment()">								
+							<select name="departamento-receptor" class="form-control" id="depts-select" onChange="getUsersOnDepartment()">
 								@foreach ($departamentos as $departamento)
-								<option>{{ $departamento->name }}</option>								
+								<option>{{ $departamento->name }}</option>
 								@endforeach
 							</select>
 						</div>
@@ -38,7 +38,7 @@
 						<label class="col-sm-3 form-control-label">Usuario Receptor</label>
 						<div class="col-sm-9">
 							<select name="receptor" class="form-control" id="user-receptor">
-								
+
 							</select>
 						</div>
 					</div>
@@ -54,8 +54,6 @@
 					<div class="line"></div>
 					<div class="formPadding form-group row">
 						<button type="submit" class="btn btn-primary">Enviar</button>
-						<button type="submit" onclick="" class="buttonPadding btn btn-secondary">Cancelar</button>
-
 					</div>
 				</form>
 			</div>

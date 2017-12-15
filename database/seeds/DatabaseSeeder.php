@@ -90,6 +90,9 @@ class DepartmentsTableSeeder extends Seeder{
             ],
             [
                 'name' => 'Subgerencia'
+            ],
+            [
+                'name' => 'Externo'
             ]
         ]);
 

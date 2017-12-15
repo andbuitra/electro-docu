@@ -139,4 +139,19 @@ class DashboardController extends Controller
         return "idk";
     }
 
+    public function changeDep(){
+        $user_id = request()->input('user_id');
+        $department = request()->input('department');
+
+        $usuario = Usuario::find($user_id);
+        $departamento = Departamento::where('name', $department)->first();
+        $usuario->departamento_id = $departamento->id;
+        $usuario->save();
+
+        dd($usuario);
+        
+        return "bien";
+
+    }
+
 }

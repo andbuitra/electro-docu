@@ -33,6 +33,7 @@ Route::post('/admin/usuarios/ajax-manage', 'DashboardController@activate');
 Route::get('/admin', 'DashboardController@adminRoot');
 Route::get('/admin/usuarios/permisos', 'DashboardController@privileges');
 Route::post('/admin/roles/ajax-change-permissions', 'DashboardController@changePermission');
+Route::post('/admin/usuario/ajax-update-dep', 'DashboardController@changeDep');
 
 #Rutas para envío y recepción de mensajes
 Route::get('/inbox', 'MessagesController@inbox');
