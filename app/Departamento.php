@@ -3,7 +3,7 @@
 namespace App;
 
 use App\Usuario;
-use App\Permiso;
+use App\Permitido;
 use Illuminate\Database\Eloquent\Model;
 
 class Departamento extends Model
@@ -16,8 +16,8 @@ class Departamento extends Model
         return $this->hasMany('Usuario');
     }
 
-    public function permisos(){
-        return $this->hasMany('Permiso');
+    public function permitidos(){
+        return $this->belongsToMany('Permitido');
     }
 
     # Devuelve la lista de departamentos a los cuales un usuario dado puede enviar mensajes

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
          $this->call('EmployeesTableSeeder');         
          $this->call('DepartmentsTableSeeder');
          $this->call('UsersTableSeeder');
+         $this->call('PermitsTableSeeder');
     }
 
 }
@@ -75,6 +76,29 @@ class UsersTableSeeder extends Seeder{
 class DepartmentsTableSeeder extends Seeder{
     public function run(){
         DB::table('departamentos')->insert([
+            [
+                'name' => 'General'
+            ],
+            [
+                'name' => 'Ventas'
+            ],
+            [
+                'name' => 'Contabilidad'
+            ],
+            [
+                'name' => 'Sistemas'
+            ],
+            [
+                'name' => 'Subgerencia'
+            ]
+        ]);
+
+    }
+}
+
+class PermitsTableSeeder extends Seeder{
+    public function run(){
+        DB::table('permitidos')->insert([
             [
                 'name' => 'General'
             ],
