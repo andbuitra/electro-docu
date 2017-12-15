@@ -53,8 +53,8 @@
 
 					<div class="line"></div>
 					<div class="formPadding form-group row">
-						<button type="submit" class="btn btn-primary">Enviar</button>
-						<button type="submit" onclick="" class="buttonPadding btn btn-secondary">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Enviar</button>8
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
 					</div>
 				</form>

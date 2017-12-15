@@ -57,7 +57,7 @@ $('table tbody').each(function(){
         var end = (currentPage+1)*maxRows,
             begin = end-maxRows+1;
 
-        $('.header-pag span').text(begin+'-'+end+' of '+$rows.length+' courses');
+        $('.header-pag span').text(begin+'-'+end+' de '+$rows.length+' paginas');
     }
 
     function displayRows(rows){
