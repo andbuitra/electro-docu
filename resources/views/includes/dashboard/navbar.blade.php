@@ -47,7 +47,7 @@
 						@if($notifications->isNotEmpty())
 							@foreach($notifications as $notification)
 							<li>
-								<a rel="nofollow" href="/detalle/{{$notification->id}}" class="dropdown-item d-flex">
+								<a rel="nofollow" href="/detalles/{{$notification->id}}" class="dropdown-item d-flex">
 									<div class="msg-profile">
 										<img src="{{ asset($notification->usuario->avatar_path) }}" alt="..." class="img-fluid rounded-circle">
 									</div>
