@@ -41,7 +41,12 @@ class MessagesController extends Controller
             return 'There are no messages';
         }
 
-        return view('inbox')->with(compact('msgs'));
+        $notifications = Documento::where('receptor', Auth::user()->id)
+        ->where('revisado', '0')
+        ->take(3)
+        ->get();
+
+        return view('inbox')->with(compact('msgs', 'notifications'));
 
     }
 
@@ -50,8 +55,12 @@ class MessagesController extends Controller
             return redirect('/');
         }
 
-        $msgs = Auth::user()->enviados()->get();        
-        return view('outbox')->with(compact('msgs'));
+        $msgs = Auth::user()->enviados()->get();
+        $notifications = Documento::where('receptor', Auth::user()->id)
+        ->where('revisado', '0')
+        ->take(3)
+        ->get();        
+        return view('outbox')->with(compact('msgs','notifications'));
     }
 
     public function detalles($id){
@@ -81,8 +90,12 @@ class MessagesController extends Controller
             $doc->save();
         }
         
+        $notifications = Documento::where('receptor', Auth::user()->id)
+        ->where('revisado', '0')
+        ->take(3)
+        ->get();
 
-        return view('detalles')->with(compact('doc'));
+        return view('detalles')->with(compact('doc', 'notifications'));
 
     }
 

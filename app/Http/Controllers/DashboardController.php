@@ -20,7 +20,11 @@ class DashboardController extends Controller
             //$usuarios = Usuario::all();
             $usuarios = Usuario::where('id', '!=', Auth::user()->id)->get();
             $departamentos = Departamento::allowedDepartments(Auth::user()->id);
-            return view('dashboard')->with(compact('departamentos'));
+            $notifications = Documento::where('receptor', Auth::user()->id)
+                            ->where('revisado', '0')
+                            ->take(3)
+                            ->get();
+            return view('dashboard')->with(compact('departamentos', 'notifications'));
         }
                
         return redirect('/login');        
@@ -69,8 +73,12 @@ class DashboardController extends Controller
         $usuarios = Usuario::all(); 
         $departamentos = Departamento::all();
         $permisos = Permiso::all();
+        $notifications = Documento::where('receptor', Auth::user()->id)
+        ->where('revisado', '0')
+        ->take(3)
+        ->get();
 
-        return view('adminRegistros')->with(compact('usuarios','departamentos'));
+        return view('adminRegistros')->with(compact('usuarios','departamentos','notifications'));
 
     }
 
@@ -104,7 +112,11 @@ class DashboardController extends Controller
 
         $departamentos = Departamento::all();        
         $permitidos = Permitido::all();
-        return view('adminPermiso')->with(compact('departamentos', 'permitidos'));
+        $notifications = Documento::where('receptor', Auth::user()->id)
+        ->where('revisado', '0')
+        ->take(3)
+        ->get();
+        return view('adminPermiso')->with(compact('departamentos', 'permitidos', 'notifications'));
         
     }
 
