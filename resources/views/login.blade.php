@@ -23,12 +23,11 @@
 							<form id="login-form" method="post" action="/login">
 								{{ csrf_field() }}
 								<div class="form-group">
-									<input id="login-email" type="email" name="loginEmail" required="" class="input-material" value="{{old('loginEmail')}}">
-									<label for="login-email" class="label-material">Correo electrónico</label>
+									<input id="login-email" type="email" name="loginEmail" required="" placeholder="Correo" class="input-material" value="{{old('loginEmail')}}">
 								</div>
 								<div class="form-group">
-									<input id="login-password" type="password" name="loginPassword" required="" class="input-material">
-									<label for="login-password" class="label-material">Contraseña</label>
+									<input id="login-password" type="password" name="loginPassword" required="" placeholder="Contraseña" class="input-material">
+									
 								</div>
 								<!-- TODO: Agregar mensaje de error que devuelve la aplicación -->
 								@if ($errors->has('credentials'))

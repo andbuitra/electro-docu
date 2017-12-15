@@ -17,22 +17,18 @@
 						<table class="tablaPermisos table table-striped table-hover">
 							<thead>
 								<tr>
-									<th rowspan="2" colspan="2" width="400px">Empleado</th>
-									<th colspan="5">Permisos</th>
+									<th rowspan="1" colspan="1" >Departamento</th>
+									<th colspan="6">Enviar y editar</th>
 								</tr>
+								
 								<tr>
-									<th colspan="2">Enviar</th>
-									<th colspan="3">Editar</th>
-
-								</tr>
-								<tr>
-									<th>Nombre</th>
-									<th>Cedula</th>
+									<th>Nombre</th>									
 									<th>Externo</th>
-									<th>Interno</th>
-									<th>Nivel 1</th>
-									<th>Nivel 2</th>
-									<th>Nivel 3</th>
+									<th>General</th>
+									<th>Ventas</th>
+									<th>Contabilidad</th>
+									<th>Sistemas</th>
+									<th>Sub-gerencia</th>
 								</tr>
 
 
@@ -42,35 +38,31 @@
 								<tr class="article-loop">
 
 									<td>{{ $usuario->nombres }}</td>
-									<td>{{ $usuario->cedula }}</td>
+									
 									<td>
 										<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
 										<label for="styled-checkbox-1"></label>
 									</td>
 									<td>
 										<input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
-										<label for="styled-checkbox-2">Ventas</label>
-										<br>
+										<label for="styled-checkbox-2"></label>
+										
+									</td>
+									<td>
 										<input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3">
-										<label for="styled-checkbox-3">Contabilidad</label>
-										<br>
+										<label for="styled-checkbox-3"></label>
+									</td>
+									<td>
 										<input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="value4">
-										<label for="styled-checkbox-4">Gerencia</label>
-										<br>
+										<label for="styled-checkbox-4"></label>
+									</td>
+									<td>
 										<input class="styled-checkbox" id="styled-checkbox-5" type="checkbox" value="value5">
-										<label for="styled-checkbox-5">Sub-Gerencia</label>
+										<label for="styled-checkbox-5"></label>
 									</td>
 									<td>
 										<input class="styled-checkbox" id="styled-checkbox-6" type="checkbox" value="value6">
 										<label for="styled-checkbox-6"></label>
-									</td>
-									<td>
-										<input class="styled-checkbox" id="styled-checkbox-7" type="checkbox" value="value7">
-										<label for="styled-checkbox-7"></label>
-									</td>
-									<td>
-										<input class="styled-checkbox" id="styled-checkbox-8" type="checkbox" value="value8">
-										<label for="styled-checkbox-8"></label>
 									</td>
 
 								</tr>
