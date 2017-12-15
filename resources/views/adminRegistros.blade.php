@@ -46,9 +46,13 @@
 									  <div class="form-group row">
                          
 				                          <div class="col-sm-9 select">
-				                            <select name="account" class="form-control">
+				                            <select id="deps-select" name="account" class="form-control" onChange="changeDepartment({{$usuario->id}});">
 				                              @foreach ($departamentos as $departamento)
-											  <option>{{$departamento->name}}</option>				                              
+											  @if($departamento->name === "Externo")
+											  <option style="display:none;">{{$departamento->name}}</option>
+											  @else
+											  <option>{{$departamento->name}}</option>
+											  @endif
 											  @endforeach
 				                            </select>
 				                          </div>
@@ -91,6 +95,21 @@
 
 			},
 			dataType: JSON
+		});
+	}
+
+	function changeDepartment(user_id){
+		$.ajax({
+			type : "POST",
+			url: "/admin/usuario/ajax-update-dep",
+			data : {
+				"_token" : "{{csrf_token()}}",
+				"user_id" : user_id,
+				"departament" : document.getElementById('deps-select').value
+			},
+			success : function(data){
+				alert('Valido');
+			}
 		});
 	}
 </script>

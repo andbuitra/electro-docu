@@ -25,7 +25,7 @@
 									<th>Nombre</th>
 									@foreach($departamentos as $departamento)
 									<th>{{ $departamento->name }}</th>
-									@endforeach
+									@endforeach									
 								</tr>
 
 
@@ -55,11 +55,6 @@
 							@endforeach
 							</tbody>							
 						</table>
-						<div class="alignButtons">
-							<button type="button" class="btn btn-success">Guardar</button>
-							<button type="button" class="paddingBotones btn btn-danger">Cancelar</button>
-						</div>
-
 					</div>
 				</div>
 			</div>
