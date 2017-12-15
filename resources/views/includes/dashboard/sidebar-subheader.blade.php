@@ -22,10 +22,6 @@
             <a href="/">
               <i class="icon-home"></i>Inicio</a>
           </li>
-          <li class="{{ Request::is('/estadisticas') ? 'active' : '' }} ">
-            <a href="./">
-              <i class="fa fa-line-chart"></i>Estadísticas</a>
-          </li>
           <li class=" {{ Request::is('/inbox') ? 'active' : '' }} ">
             <a href="{{URL::to('/')}}/inbox">
               <i class="fa fa-cloud-download"></i>Recibidos</a>

@@ -9,10 +9,11 @@
 
 		<div class="card-header d-flex align-items-center">
 			<div class="userImg avatar">
-				<img src="img/user.png" alt="..." class="img-fluid rounded-circle">
+				<img src="{{ asset(Auth::user()->avatar_path) }}" alt="..." class="img-fluid rounded-circle">
 			</div>
 			<div class="align-profile-title title">
-				<h1 class="h4">{{ $user->nombres }} {{ $user->apellidos }}</h1>
+				<h2 class="h2">{{ $user->nombres }} {{ $user->apellidos }}</h2>
+				<h5 class="h5">{{App\Departamento::find($user->departamento_id)->name}}</h5>
 
 			</div>
 		</div>
