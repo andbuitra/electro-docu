@@ -33,6 +33,16 @@ class EmployeesTableSeeder extends Seeder{
                 'cedula' => '456', 
                 'nombre' => 'Jane', 
                 'apellido' => 'Doe'
+            ],
+            [
+                'cedula' => '789', 
+                'nombre' => 'Lucy', 
+                'apellido' => 'Doe'
+            ],
+            [
+                'cedula' => '000', 
+                'nombre' => 'Hugo', 
+                'apellido' => 'Doe'
             ]
         ]);
 

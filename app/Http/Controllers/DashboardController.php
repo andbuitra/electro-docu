@@ -35,7 +35,11 @@ class DashboardController extends Controller
 		
         if(Auth::check()){
             $user = Auth::user();
-            return view('perfil')->with(compact('user'));
+            $notifications = Documento::where('receptor', Auth::user()->id)
+            ->where('revisado', '0')
+            ->take(3)
+            ->get();
+            return view('perfil')->with(compact('user','notifications'));
         }
         
         return redirect('/');
