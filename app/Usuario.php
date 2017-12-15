@@ -95,7 +95,7 @@ class Usuario extends Authenticatable
     public function recibidos($usuario_id){
         return DB::table('usuarios')
         ->join('documentos', 'usuarios.id', '=', 'documentos.receptor')
-        ->select('documentos.id', 'documentos.titulo', 'documentos.path', 'documentos.created_at', 'documentos.usuario_id')
+        ->select('documentos.id', 'documentos.titulo', 'documentos.path', 'documentos.created_at', 'documentos.usuario_id', 'documentos.revisado')
         ->where('documentos.receptor', '=', $usuario_id)->get()->reverse();
     }
 

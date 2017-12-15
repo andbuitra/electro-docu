@@ -39,5 +39,6 @@ Route::get('/outbox', 'MessagesController@outbox');
 Route::get('/detalles/{id}', 'MessagesController@detalles');
 //Route::get('/detalles', 'MessagesController@detallesTest');
 Route::post('/enviar', 'MessagesController@enviar');
+Route::post('/ajax-check-message', 'MessagesController@checker');
 
 

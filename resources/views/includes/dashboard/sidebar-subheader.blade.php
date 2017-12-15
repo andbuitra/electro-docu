@@ -2,7 +2,7 @@
         <!-- Sidebar Header-->
         <div class="sidebar-header d-flex align-items-center">
           <div class="imageHover avatar">
-            <img id="myImg" src="{{ asset('img/user.png') }}" alt="..." class="img-fluid rounded-circle">
+            <img id="myImg" src="{{ asset(Auth::user()->avatar_path) }}" alt="..." class="img-fluid rounded-circle">
           </div>
           <div class="title">
             <h1 class="h4"> {{Auth::user()->nombres}} </h1>

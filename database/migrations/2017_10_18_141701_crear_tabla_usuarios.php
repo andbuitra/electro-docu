@@ -23,6 +23,7 @@ class CrearTablaUsuarios extends Migration
             $table->string('vercode');
             $table->string('verified')->default('0');
             $table->string('password');
+            $table->string('avatar_path')->default('img/user.png');
             $table->string('remember_token')->nullable();
 
             //$table->integer('departamento_id')->unsigned()->index();

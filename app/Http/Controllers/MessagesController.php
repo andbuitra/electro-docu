@@ -75,6 +75,13 @@ class MessagesController extends Controller
             return redirect('/inbox');
         }
 
+        if(Auth::user()->id === $doc->receptor){
+            $doc->revisado = 1;
+            $doc->leido = 1;
+            $doc->save();
+        }
+        
+
         return view('detalles')->with(compact('doc'));
 
     }
@@ -82,4 +89,18 @@ class MessagesController extends Controller
     public function detallesTest(){
         return view('detalles');
     }
+
+    public function checker(){
+        $message_id = request()->input('message_id');
+        $doc = Documento::find($message_id);
+        if($doc->revisado === 1){
+            $doc->revisado = 0;
+            $doc->save();
+        }else{
+            $doc->revisado = 1;
+            $doc->save();
+        }
+        return "Todo bien todo correcto equisdé";
+    }
+
 }

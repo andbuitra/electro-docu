@@ -35,7 +35,7 @@
 									<th class="titulo">Titulo</th>
 									<th class="remitente">Remitente(s)</th>
 									<th class="fecha">Fecha</th>
-									<th></th>
+									<th>Revisado</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -48,8 +48,13 @@
 									<td class="remitente">{{ App\Usuario::find($msg->usuario_id)->nombres.' '.App\Usuario::find($msg->usuario_id)->apellidos.' - '.App\Departamento::find(App\Usuario::find($msg->usuario_id)->departamento_id)->name }}</td>
 									<td class="fecha">{{ $msg->created_at }}</td>
 									<td>
-										<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+										@if($msg->revisado === 0)
+										<input name="revisado" onclick="tickAsChecked({{$msg->id}})" class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="{{$msg->revisado}}">
 										<label for="styled-checkbox-1"></label>
+										@else
+										<input name="revisado" onclick="tickAsChecked({{$msg->id}})" class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="{{$msg->revisado}}" checked>
+										<label for="styled-checkbox-1"></label>
+										@endif
 									</td>
 								</tr>
                 @endforeach
@@ -87,5 +92,22 @@
             });
           }
 
+</script>
+
+<script>
+
+	function tickAsChecked(id){
+		$.ajax({
+			type : "POST",
+			url : "ajax-check-message",
+			data : {
+				"_token" : "{{csrf_token()}}",
+				"message_id" : id,				
+			},
+			success : function(data){
+				alert('Cambiado');
+			}
+		});
+	}
 </script>
 @endsection
