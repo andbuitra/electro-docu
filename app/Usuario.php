@@ -6,7 +6,6 @@ namespace App;
 
 use App\Permiso;
 use App\Empleado;
-use App\Departamento;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Database\Eloquent\Model;
@@ -39,7 +38,7 @@ class Usuario extends Authenticatable
     }
 
     public function departamento(){
-        return $this->belongsTo('Departamento');
+        return $this->belongsTo('App\Departamento');
     }
 
     # Model methods

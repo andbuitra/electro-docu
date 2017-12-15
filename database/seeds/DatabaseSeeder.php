@@ -113,6 +113,9 @@ class PermitsTableSeeder extends Seeder{
             ],
             [
                 'name' => 'Subgerencia'
+            ],
+            [
+                'name' => 'Externo'
             ]
         ]);
 

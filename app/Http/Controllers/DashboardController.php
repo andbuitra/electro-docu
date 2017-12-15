@@ -8,6 +8,7 @@ use App\Usuario;
 use App\Departamento;
 use App\Permiso;
 use App\Documento;
+use App\Permitido;
 
 
 class DashboardController extends Controller
@@ -101,9 +102,9 @@ class DashboardController extends Controller
             return redirect('/');
         }
 
-        $usuarios = Usuario::all();        
-        $permisos = Permiso::all();
-        return view('adminPermiso')->with(compact('usuarios'));
+        $departamentos = Departamento::all();        
+        $permitidos = Permitido::all();
+        return view('adminPermiso')->with(compact('departamentos', 'permitidos'));
         
     }
 
@@ -116,6 +117,26 @@ class DashboardController extends Controller
         $departamento = Departamento::where('name', $dep_name)->get()->first();
 
         return Usuario::where('departamento_id', $departamento->id)->where('id', '!=', Auth::user()->id)->get()->toJson();
+    }
+
+    public function changePermission(){
+        $dep_id = request()->input('d_id');
+        $per_id = request()->input('p_id');
+
+        $departamento = Departamento::find($dep_id);
+        $request = request();        
+
+        if($departamento->permitidos()->where('id', $per_id)->exists()){
+            $departamento->permitidos()->detach($per_id);
+            return $request->toArray();
+        }
+
+        if(!$departamento->permitidos()->where('id', $per_id)->exists()){
+            $departamento->permitidos()->attach($per_id);
+            return $request->toArray();
+        }
+
+        return "idk";
     }
 
 }

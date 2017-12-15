@@ -22,51 +22,37 @@
 								</tr>
 								
 								<tr>
-									<th>Nombre</th>									
-									<th>Externo</th>
-									<th>General</th>
-									<th>Ventas</th>
-									<th>Contabilidad</th>
-									<th>Sistemas</th>
-									<th>Sub-gerencia</th>
+									<th>Nombre</th>
+									@foreach($departamentos as $departamento)
+									<th>{{ $departamento->name }}</th>
+									@endforeach
 								</tr>
 
 
 							</thead>
 							<tbody>
-								@foreach ($usuarios as $usuario)
+							@foreach($departamentos as $departamento)							
 								<tr class="article-loop">
-
-									<td>{{ $usuario->nombres }}</td>
 									
+									<td>{{$departamento->name}}</td>
+									
+									@foreach($permitidos as $permitido)
+									@if($departamento->permitidos()->where('id',$permitido->id)->exists())
 									<td>
-										<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-										<label for="styled-checkbox-1"></label>
+										<input class="styled-checkbox" id="{{$departamento->id}},{{$permitido->id}}" type="checkbox" value="{{$departamento->id}},{{$permitido->id}}" onClick="changePermission({{$departamento->id}},{{$permitido->id}})" checked>
+										<label for="{{$departamento->id}},{{$permitido->id}}"></label>
 									</td>
+									@else
 									<td>
-										<input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
-										<label for="styled-checkbox-2"></label>
-										
+										<input class="styled-checkbox" id="{{$departamento->id}},{{$permitido->id}}" type="checkbox" value="{{$departamento->id}},{{$permitido->id}}" onClick="changePermission({{$departamento->id}},{{$permitido->id}})">
+										<label for="{{$departamento->id}},{{$permitido->id}}"></label>				
 									</td>
-									<td>
-										<input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3">
-										<label for="styled-checkbox-3"></label>
-									</td>
-									<td>
-										<input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="value4">
-										<label for="styled-checkbox-4"></label>
-									</td>
-									<td>
-										<input class="styled-checkbox" id="styled-checkbox-5" type="checkbox" value="value5">
-										<label for="styled-checkbox-5"></label>
-									</td>
-									<td>
-										<input class="styled-checkbox" id="styled-checkbox-6" type="checkbox" value="value6">
-										<label for="styled-checkbox-6"></label>
-									</td>
+									@endif
+									@endforeach
+									
 
 								</tr>
-								@endforeach
+							@endforeach
 							</tbody>							
 						</table>
 						<div class="alignButtons">
@@ -84,22 +70,20 @@
 
 @endsection @section('js')
 <script>
-	function manageUser(id, verified){
-    $.ajax({
-      type: "POST",
-      url: "/admin/usuarios/ajax-manage",
-      data: {
-				"_token": "{{csrf_token()}}",
-        "id": id,
-        "verified": verified
-      },
-			success: function(data){
-				if(data.success == true){
-					window.location.replace('/admin/usuarios');
-				}
 
-			},
-    });
+  function changePermission(departamento_id, permitido_id){
+	  $.ajax({
+		  type : "POST",
+		  url : "/admin/roles/ajax-change-permissions",
+		  data : {
+			  "_token" : "{{csrf_token()}}",
+			  'd_id' : departamento_id,
+			  "p_id" : permitido_id
+		  },
+		  success : function(data){
+			  console.log(data);
+		  }
+	  });
   }
 
 </script>

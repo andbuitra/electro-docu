@@ -21,11 +21,11 @@ class CreatePermitidosTable extends Migration
         });
 
         Schema::create('departamento_permitido', function(Blueprint $table){
-            $table->increments('id');
-            $table->integer('permitido_id')->unsigned()->index();
-            $table->foreign('permitido_id')->references('id')->on('permitidos');
+            //$table->increments('id');
             $table->integer('departamento_id')->unsigned()->index();
             $table->foreign('departamento_id')->references('id')->on('departamentos');
+            $table->integer('permitido_id')->unsigned()->index();
+            $table->foreign('permitido_id')->references('id')->on('permitidos');            
             $table->timestamps();
         });
     }
